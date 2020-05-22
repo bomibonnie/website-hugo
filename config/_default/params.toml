@@ -82,7 +82,7 @@ edit_page = {repo_url = "https://github.com/gcushen/hugo-academic", content_dir 
 
 # Enter contact details (optional). To hide a field, clear it to "".
 email = "bomi-lee-1@uiowa.edu"
-#phone = "888 888 88 88"
+phone = ""
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
@@ -90,8 +90,8 @@ address = {street = "367 Schaeffer Hall", city = "Iowa City", region = "IA", pos
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-coordinates = {latitude = "37.4275", longitude = "-122.1697"}
-
+coordinates = {latitude = "41.660757", longitude = "-91.535572"}
+ 
 # Directions for visitors to locate you.
 directions = ""
 
