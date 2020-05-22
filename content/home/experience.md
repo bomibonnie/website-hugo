@@ -24,7 +24,7 @@ date_format = "Jan 2006"
   location = ""
   date_start = "2019-08-01"
   date_end = ""
-  description = """Lead workshops as follows.
+  description = """Lead workshops:
   
   * Introduction and Data Management Using R
   * Network Visualization Using R
