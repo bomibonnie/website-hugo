@@ -1,0 +1,113 @@
+---
+title: Making Network Animations Using NDTV package
+author: ~
+date: '2020-05-27'
+slug: making-network-animations-using-ndtv-package
+categories:
+  - R
+  - Networks
+  
+tags:
+
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-05-27T18:00:41-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+url_video: "rivndtv.mp4"
+projects: []
+---
+
+The following commands are for making a network animation (moving networks) using R packages `statnet` and `ndtv`.
+
+### Load packages
+
+
+```{r setup, warning = FALSE, message = FALSE}
+library(statnet)
+library(ndtv)
+library(rio)
+library(knitr)
+```
+
+
+### Load data
+```{r data, warning = FALSE, message = FALSE}
+riv <- import("C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta")
+vtx <- import("C:/Users/bomim/Documents/website-hugo//content/post/node.csv")
+vtx87 <- import("C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv")
+
+```
+
+#### Look at the data
+
+```{r dataex, warning = FALSE, message = FALSE, tidy=TRUE}
+head(riv)
+head(vtx87)
+```
+
+### Make a list of networks
+
+```{r network, warning = FALSE, message = FALSE}
+nv <- nrow(vtx)
+
+rivlist <- list()
+
+for(i in 1:4){
+  rivi <- subset(riv, riv$no == i)
+  rivii<-cbind(rivi$stateabb1, rivi$stateabb2)
+  netyr <- network.initialize(nv, directed=FALSE)
+  network.vertex.names(x=netyr) <- vtx$stateabb
+  netyr[rivii] <- 1
+  set.vertex.attribute(x=netyr,attrname="order",val=rep(i,nv))
+  rivlist[[i]] <- netyr
+}
+```
+
+* Set vertex attribute
+
+```{r network_attribute, warning = FALSE, message = FALSE}
+set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
+
+cols1<-vector()
+for(i in 1:204){
+  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
+         cols1[i] <- "red", cols1[i]<-"blue")
+}
+```
+
+* Make a plot 
+
+```{r plot, warning = FALSE, message = FALSE}
+plot(rivlist[[1]], 
+     vertex.col=cols1, 
+     edge.col="grey50",
+     xpd=T)
+```
+
+
+### Make GIFs!
+
+```{r dynamics, warning = FALSE, message = FALSE, eval=FALSE}
+rivdyn <- networkDynamic(network.list = rivlist)
+rivgif <- compute.animation(rivdyn, 
+                            default.dist = 3,
+                            animation.mode = "MDSJ",
+                            verbose = FALSE)
+
+```
+
+
+```{r gif, warning = FALSE, message = FALSE, eval=FALSE}
+render.d3movie(rivgif,
+               displaylables=FALSE, 
+               vertex.col=cols1)
+```
+
+{{% alert note %}}
+You can look at the network animation by clicking **Video** button above.
+{{% /alert %}}

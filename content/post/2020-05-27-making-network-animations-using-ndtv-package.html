@@ -1,0 +1,107 @@
+---
+title: Making Network Animations Using NDTV package
+author: ~
+date: '2020-05-27'
+slug: making-network-animations-using-ndtv-package
+categories:
+  - R
+  - Networks
+  
+tags:
+
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-05-27T18:00:41-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+url_video: "rivndtv.mp4"
+projects: []
+---
+
+
+
+<p>The following commands are for making a network animation (moving networks) using R packages <code>statnet</code> and <code>ndtv</code>.</p>
+<div id="load-packages" class="section level3">
+<h3>Load packages</h3>
+<pre class="r"><code>library(statnet)
+library(ndtv)
+library(rio)
+library(knitr)</code></pre>
+</div>
+<div id="load-data" class="section level3">
+<h3>Load data</h3>
+<pre class="r"><code>riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)
+vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)
+vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&quot;)</code></pre>
+<div id="look-at-the-data" class="section level4">
+<h4>Look at the data</h4>
+<pre class="r"><code>head(riv)</code></pre>
+<pre><code>##   year stateabb1 stateabb2 no
+## 1 1987       AFG       PAK  1
+## 2 1992       AFG       PAK  2
+## 3 1997       AFG       PAK  3
+## 4 2002       AFG       PAK  4
+## 5 1997       AFG       TAJ  3
+## 6 1997       AFG       UZB  3</code></pre>
+<pre class="r"><code>head(vtx87)</code></pre>
+<pre><code>##   stateabb ccode dem        cinc
+## 1      AAB    58   0 0.000002740
+## 2      AFG   700   0 0.001255717
+## 3      ALB   339   0 0.000529850
+## 4      ALG   615   0 0.004066098
+## 5      AND   232   0 0.000000000
+## 6      ANG   540   0 0.001150265</code></pre>
+</div>
+</div>
+<div id="make-a-list-of-networks" class="section level3">
+<h3>Make a list of networks</h3>
+<pre class="r"><code>nv &lt;- nrow(vtx)
+
+rivlist &lt;- list()
+
+for(i in 1:4){
+  rivi &lt;- subset(riv, riv$no == i)
+  rivii&lt;-cbind(rivi$stateabb1, rivi$stateabb2)
+  netyr &lt;- network.initialize(nv, directed=FALSE)
+  network.vertex.names(x=netyr) &lt;- vtx$stateabb
+  netyr[rivii] &lt;- 1
+  set.vertex.attribute(x=netyr,attrname=&quot;order&quot;,val=rep(i,nv))
+  rivlist[[i]] &lt;- netyr
+}</code></pre>
+<ul>
+<li>Set vertex attribute</li>
+</ul>
+<pre class="r"><code>set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
+
+cols1&lt;-vector()
+for(i in 1:204){
+  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
+         cols1[i] &lt;- &quot;red&quot;, cols1[i]&lt;-&quot;blue&quot;)
+}</code></pre>
+<ul>
+<li>Make a plot</li>
+</ul>
+<pre class="r"><code>plot(rivlist[[1]], 
+     vertex.col=cols1, 
+     edge.col=&quot;grey50&quot;,
+     xpd=T)</code></pre>
+<p><img src="/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png" width="672" /></p>
+</div>
+<div id="make-gifs" class="section level3">
+<h3>Make GIFs!</h3>
+<pre class="r"><code>rivdyn &lt;- networkDynamic(network.list = rivlist)
+rivgif &lt;- compute.animation(rivdyn, 
+                            default.dist = 3,
+                            animation.mode = &quot;MDSJ&quot;,
+                            verbose = FALSE)</code></pre>
+<pre class="r"><code>render.d3movie(rivgif,
+               displaylables=FALSE, 
+               vertex.col=cols1)</code></pre>
+<p>{{% alert note %}}
+You can look at the network animation by clicking <strong>Video</strong> button above.
+{{% /alert %}}</p>
+</div>

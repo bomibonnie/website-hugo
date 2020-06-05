@@ -3,9 +3,9 @@
 widget = "accomplishments"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 50  # Order that this section will appear.
+weight = 30  # Order that this section will appear.
 
-title = "Accomplish&shy;ments"
+title = "Workshops"
 subtitle = ""
 
 # Date format
@@ -19,33 +19,23 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[item]]
-  organization = "Coursera"
-  organization_url = "https://www.coursera.org"
-  title = "Neural Networks and Deep Learning"
-  url = ""
-  certificate_url = "https://www.coursera.org"
-  date_start = "2018-10-01"
+  organization = "Iowa Social Science Research Center"
+  organization_url = "https://ppc.uiowa.edu/isrc/workshops"
+  title = "Data Management using R"
+  url = "https://github.com/bomibonnie/R-Workshops/blob/master/2020%20Data%20Management%20Using%20R.R"
+  certificate_url = ""
+  date_start = "2020-02-01"
   date_end = ""
-  description = ""
+  description = "Covers a basic introduction to the R programming language. Introduce the RStudio interface, syntax, script files, basic functions, and how to manage single and multiple datasets."
 
 [[item]]
-  organization = "edX"
-  organization_url = "https://www.edx.org"
-  title = "Blockchain Fundamentals"
-  url = "https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals"
-  certificate_url = "https://www.edx.org"
-  date_start = "2018-03-01"
+  organization = "Iowa Social Science Research Center"
+  organization_url = "https://ppc.uiowa.edu/isrc/workshops"
+  title = "Network Visualization using R"
+  url = "https://github.com/bomibonnie/R-Workshops/blob/master/Networks/2020%20Network%20Visualization%20using%20R.R"
+  certificate_url = ""
+  date_start = "2020-03-01"
   date_end = ""
-  description = "Formulated informed blockchain models, hypotheses, and use cases."
+  description = "Provide a series of examples from raw data to graph visualization in the igraph and Statnet frameworks."
   
-[[item]]
-  organization = "DataCamp"
-  organization_url = "https://www.datacamp.com"
-  title = "Object-Oriented Programming in R: S3 and R6 Course"
-  url = ""
-  certificate_url = "https://www.datacamp.com"
-  date_start = "2017-07-01"
-  date_end = "2017-12-21"
-  description = ""
-
 +++

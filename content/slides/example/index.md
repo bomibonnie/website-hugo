@@ -2,43 +2,37 @@
 title: Slides
 summary: An introduction to using Academic's Slides feature.
 authors: []
-tags: []
+tags: Networks
 categories: []
 date: "2019-02-05T00:00:00Z"
 slides:
-  # Choose a theme from https://github.com/hakimel/reveal.js#theming
   theme: black
   # Choose a code highlighting style (if highlighting enabled in `params.toml`)
   #   Light style: github. Dark style: dracula (default).
   highlight_style: dracula
 ---
 
-# Create slides in Markdown with Academic
+# Triangles, Major Powers, and Rivalry Duration
 
-[Academic](https://sourcethemes.com/academic/) | [Documentation](https://sourcethemes.com/academic/docs/managing-content/#create-slides)
-
----
-
-## Features
-
-- Efficiently write slides in Markdown
-- 3-in-1: Create, Present, and Publish your slides
-- Supports speaker notes
-- Mobile friendly slides
+[Bomi K. Lee](https://bomibonnie.github.io/) University of Iowa
 
 ---
 
-## Controls
+{{< slide background-image="/img/iowa2.jpg" >}}
 
-- Next: `Right Arrow` or `Space`
-- Previous: `Left Arrow`
-- Start: `Home`
-- Finish: `End`
-- Overview: `Esc`
-- Speaker notes: `S`
-- Fullscreen: `F`
-- Zoom: `Alt + Click`
-- [PDF Export](https://github.com/hakimel/reveal.js#pdf-export): `E`
+## Rivalries: dyadic interactions
+
+
+<img data-src="/img/rivdyads.png">
+
+---
+
+{{< slide background-image="/img/iowa2.jpg" >}}
+
+## Rivalries in Triadic Relationships?
+
+<img data-src="/img/triangle1.png">
+
 
 ---
 
@@ -129,14 +123,14 @@ Press the `S` key to view the speaker notes!
 
 ---
 
-{{< slide background-image="/img/boards.jpg" >}}
+{{< slide background-image="/img/iowa.jpg" >}}
 
 ## Custom Slide
 
 Customize the slide style and background
 
 ```markdown
-{{</* slide background-image="/img/boards.jpg" */>}}
+{{</* slide background-image="/img/University_of_Iowa_Logo.png" */>}}
 {{</* slide background-color="#0000FF" */>}}
 {{</* slide class="my-style" */>}}
 ```

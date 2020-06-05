@@ -58,8 +58,7 @@ email: ""
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- Researchers
-- Visitors
+
 ---
 
 I am a Ph.D student of political science at the University of Iowa. I received my B.A. in political science and M.A. in international relations from Seoul National University. My research and teaching interests include international conflict and cooperation, international rivalries, and political methodology.
