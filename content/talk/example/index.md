@@ -65,6 +65,6 @@ math: false
 ---
 
 {{% alert note %}}
-You can find my presentation slides by clicking **Slides** button above.
+You can look over my presentation slides by clicking **pdf** button above.
 {{% /alert %}}
 
