@@ -32,7 +32,6 @@ I use the following packages to make a network gif. `statnet` and `ndtv` package
 library(statnet)
 library(ndtv)
 library(rio)
-library(knitr)
 ```
 
 
@@ -52,7 +51,7 @@ vtx87 <- import("C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv"
 
 ```
 
-#### Step 3: Look at the data
+### Step 3: Look at the data
 
 Let's look at the data we loaded in the previous step. The object 'riv' is the list of rivalries in the given time points. 'riv' has four columns: year, stateabb1, stateabb2, and no. Since rivalries are not directed (if Country A is Country B's rival, then Country B is Country A's rival as well), the order of stateabb1 and stateabb2 doesn't matter. I'll use 'no' variable to identify the time points but you can use 'year' instead.
 
@@ -67,6 +66,17 @@ head(vtx87)
 ```
 
 ### Step 4: Make a list of networks
+
+I use for loop to make a rivalry network for each time point. Briefly, I make an object of list (rivlist) and put rivalry networks for four time points in the list.
+
+* More details
+
+The object, 'nv', is the numeric value, which shows the total number of countries (204 countries in my node list). 
+
+Let's look at the for loop chunk. This is for making a rivalry network for each time point. I use 'no' variable to identify the time points. When i is equal to 1, all rivalries in 1987 (rivi) and two columns from rivi (stateabb1 and stateabb2) would be selected (rivii). 
+
+Using the nv (204L), I make an empty network (network.initialize). Since there is no direction in rivalry networks, the option, directed is FALSE. If your networks of interest are directed, change the option to TRUE. For the network made, I add the vertex names using the command, 'network.vertex.names'. Now the vertices in the network have their names (stateabb) but still there are no ties. Information about ties is loaded from the object, rivii. The next line is optional. I add info about time points as a vertex attribute (order). This sequence is repeated for four time points.
+
 
 ```{r network, warning = FALSE, message = FALSE}
 nv <- nrow(vtx)
@@ -86,6 +96,11 @@ for(i in 1:4){
 
 * Set vertex attribute
 
+As shown in the previous step, we can use the command, 'set.vertex.attribute', to add vertex attributes to the network. Following commands are for the color of nodes. 
+
+From 'vtx87', I add more info such as COW country code and CINC score for each country in the network. I use the COW country code for the color of nodes: red for Americas, orange for Europe, yellow for Africa, green for Middle East, and blue for Asia and Oceania. If you want to color the nodes, you'd better to choose one of the variables which rarely varies over time such as geographical location for countries and gender for individuals. Although `ndtv` shows changes in networks such as newly appearing and disappearing ties, it doesn't allow changes in nodal attributes. For instance, let's say you want to color nodes depending on the regime type such as democracy/non-democracy. If Country A moved to democracy from non-democracy in the middle (like time point 2 or 3), its change cannot be reflected in the network gif.
+
+
 ```{r network_attribute, warning = FALSE, message = FALSE}
 set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
 
@@ -93,14 +108,16 @@ cols1<-vector()
 for(i in 1:204){
   ifelse(rivlist[[1]]$val[[i]]$ccode<200, cols1[i] <- "red", 
          ifelse((rivlist[[1]]$val[[i]]$ccode>=200)&(rivlist[[1]]$val[[i]]$ccode<400), cols1[i]<-"orange",
-                ifelse((rivlist[[1]]$val[[i]]$ccode>=400)&(rivlist[[1]]$val[[i]]$ccode<600), cols1[i]<-"yellow",
-                       ifelse((rivlist[[1]]$val[[i]]$ccode>=600)&(rivlist[[1]]$val[[i]]$ccode<800),cols1[i]<-"green", cols1[i]<-"blue"))))
+                ifelse((rivlist[[1]]$val[[i]]$ccode>=400)&(rivlist[[1]]$val[[i]]$ccode<630), cols1[i]<-"yellow",
+                       ifelse((rivlist[[1]]$val[[i]]$ccode>=630)&(rivlist[[1]]$val[[i]]$ccode<700),cols1[i]<-"green", cols1[i]<-"blue"))))
 }
 ```
 
-** You can find more commands for data managemen in R [here](https://github.com/bomibonnie/R-Workshops) from my github. 
+** You can find more commands for data management in R [here](https://github.com/bomibonnie/R-Workshops) from my github. 
 
 * Make a plot 
+
+Let's look at the rivalry network in 1987 (time point 1). I use the vector of colors for this plot. 
 
 ```{r plot, warning = FALSE, message = FALSE}
 plot(rivlist[[1]], 
@@ -112,6 +129,8 @@ plot(rivlist[[1]],
 
 ### Step 5: Make GIFs!
 
+Almost there! We use the network list (rivlist) to make a networkDynamic object, rivdyn. Before we render an animation, we need one more step here. By using the 'compute.animation' command, we can set intervals, animation layout, etc.
+
 ```{r dynamics, warning = FALSE, message = FALSE, eval=FALSE}
 rivdyn <- networkDynamic(network.list = rivlist)
 rivgif <- compute.animation(rivdyn, 
@@ -120,6 +139,8 @@ rivgif <- compute.animation(rivdyn,
 
 ```
 
+This is the last step. Use the 'render.d3movie' command to make a network gif! I add the color vector for this gif!
+
 
 ```{r gif, warning = FALSE, message = FALSE, eval=FALSE}
 render.d3movie(rivgif,
@@ -127,6 +148,9 @@ render.d3movie(rivgif,
                vertex.col=cols1)
 ```
 
+More information about `ndtv` can be found [here](https://rdrr.io/cran/ndtv/f/inst/doc/ndtv.pdf).
+
+
 {{% alert note %}}
-You can look at the network animation by clicking **Video** button above.
+You can look at the network gif by clicking **Video** button above.
 {{% /alert %}}
