@@ -25,20 +25,27 @@ projects: []
 
 
 <p>The following commands are for making a network animation (moving networks) using R packages <code>statnet</code> and <code>ndtv</code>.</p>
-<div id="load-packages" class="section level3">
-<h3>Load packages</h3>
+<div id="step-1-load-packages" class="section level3">
+<h3>Step 1: Load packages</h3>
+<p>I use the following packages to make a network gif. <code>statnet</code> and <code>ndtv</code> packages are necessary but you can use other packages instead of <code>rio</code> to load data. I prefer <code>rio</code> because the command is simple. What we need to do is type ‘import’.</p>
 <pre class="r"><code>library(statnet)
 library(ndtv)
 library(rio)
 library(knitr)</code></pre>
 </div>
-<div id="load-data" class="section level3">
-<h3>Load data</h3>
+<div id="step-2-load-data" class="section level3">
+<h3>Step 2: Load data</h3>
+<p>I’ll make a network gif for the formation and dissolution of interstate rivalry from 1987 to 2002 with 5-year intervals (four time points). So, two pieces of information are necessary: 1) a list of rivalries for the given time points, and 2) a list of countries. The current version of <code>ndtv</code> package doesn’t allow varying numbers of vertices, which means the number of vertices must be the same for all time points. Indeed, some countries newly appeared and others were gone from 1987 to 2002. However, because of the limitation, I put all countries which existed for the given period in my node list (node.csv).</p>
+<p>Additionally, I’ll color the countries using their geographical location. For the color of the nodes, I’ll use COW country code, which is included in ‘vtx1987.csv’ file below.</p>
+<p>You can find these toy datasets from my <a href="https://github.com/bomibonnie/website-hugo/tree/master/content/post">github</a>.</p>
 <pre class="r"><code>riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)
 vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)
 vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&quot;)</code></pre>
-<div id="look-at-the-data" class="section level4">
-<h4>Look at the data</h4>
+<div id="step-3-look-at-the-data" class="section level4">
+<h4>Step 3: Look at the data</h4>
+<p>Let’s look at the data we loaded in the previous step. The object ‘riv’ is the list of rivalries in the given time points. ‘riv’ has four columns: year, stateabb1, stateabb2, and no. Since rivalries are not directed (if Country A is Country B’s rival, then Country B is Country A’s rival as well), the order of stateabb1 and stateabb2 doesn’t matter. I’ll use ‘no’ variable to identify the time points but you can use ‘year’ instead.</p>
+<p>Because our edge list (the list of rivalries) is made using stateabb (i.e., AAB, AFG, ALB…), our node list must be a list of stateabb.</p>
+<p>For the color of nodes, I add more info to the object, ‘vtx87’. The nodes will be matched using the ‘stateabb’ variable.</p>
 <pre class="r"><code>head(riv)</code></pre>
 <pre><code>##   year stateabb1 stateabb2 no
 ## 1 1987       AFG       PAK  1
@@ -47,18 +54,26 @@ vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1
 ## 4 2002       AFG       PAK  4
 ## 5 1997       AFG       TAJ  3
 ## 6 1997       AFG       UZB  3</code></pre>
+<pre class="r"><code>head(vtx)</code></pre>
+<pre><code>##   stateabb
+## 1      AAB
+## 2      AFG
+## 3      ALB
+## 4      ALG
+## 5      AND
+## 6      ANG</code></pre>
 <pre class="r"><code>head(vtx87)</code></pre>
-<pre><code>##   stateabb ccode dem        cinc
-## 1      AAB    58   0 0.000002740
-## 2      AFG   700   0 0.001255717
-## 3      ALB   339   0 0.000529850
-## 4      ALG   615   0 0.004066098
-## 5      AND   232   0 0.000000000
-## 6      ANG   540   0 0.001150265</code></pre>
+<pre><code>##   stateabb ccode        cinc
+## 1      AAB    58 0.000002740
+## 2      AFG   700 0.001255717
+## 3      ALB   339 0.000529850
+## 4      ALG   615 0.004066098
+## 5      AND   232 0.000000000
+## 6      ANG   540 0.001150265</code></pre>
 </div>
 </div>
-<div id="make-a-list-of-networks" class="section level3">
-<h3>Make a list of networks</h3>
+<div id="step-4-make-a-list-of-networks" class="section level3">
+<h3>Step 4: Make a list of networks</h3>
 <pre class="r"><code>nv &lt;- nrow(vtx)
 
 rivlist &lt;- list()
@@ -79,9 +94,12 @@ for(i in 1:4){
 
 cols1&lt;-vector()
 for(i in 1:204){
-  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
-         cols1[i] &lt;- &quot;red&quot;, cols1[i]&lt;-&quot;blue&quot;)
+  ifelse(rivlist[[1]]$val[[i]]$ccode&lt;200, cols1[i] &lt;- &quot;red&quot;, 
+         ifelse((rivlist[[1]]$val[[i]]$ccode&gt;=200)&amp;(rivlist[[1]]$val[[i]]$ccode&lt;400), cols1[i]&lt;-&quot;orange&quot;,
+                ifelse((rivlist[[1]]$val[[i]]$ccode&gt;=400)&amp;(rivlist[[1]]$val[[i]]$ccode&lt;600), cols1[i]&lt;-&quot;yellow&quot;,
+                       ifelse((rivlist[[1]]$val[[i]]$ccode&gt;=600)&amp;(rivlist[[1]]$val[[i]]$ccode&lt;800),cols1[i]&lt;-&quot;green&quot;, cols1[i]&lt;-&quot;blue&quot;))))
 }</code></pre>
+<p>** You can find more commands for data managemen in R <a href="https://github.com/bomibonnie/R-Workshops">here</a> from my github.</p>
 <ul>
 <li>Make a plot</li>
 </ul>
@@ -91,12 +109,11 @@ for(i in 1:204){
      xpd=T)</code></pre>
 <p><img src="/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png" width="672" /></p>
 </div>
-<div id="make-gifs" class="section level3">
-<h3>Make GIFs!</h3>
+<div id="step-5-make-gifs" class="section level3">
+<h3>Step 5: Make GIFs!</h3>
 <pre class="r"><code>rivdyn &lt;- networkDynamic(network.list = rivlist)
 rivgif &lt;- compute.animation(rivdyn, 
-                            default.dist = 3,
-                            animation.mode = &quot;MDSJ&quot;,
+                            animation.mode = &quot;kamadakawai&quot;,
                             verbose = FALSE)</code></pre>
 <pre class="r"><code>render.d3movie(rivgif,
                displaylables=FALSE, 

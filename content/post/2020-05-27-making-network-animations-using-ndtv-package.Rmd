@@ -24,8 +24,9 @@ projects: []
 
 The following commands are for making a network animation (moving networks) using R packages `statnet` and `ndtv`.
 
-### Load packages
+### Step 1: Load packages
 
+I use the following packages to make a network gif. `statnet` and `ndtv` packages are necessary but you can use other packages instead of `rio` to load data. I prefer `rio` because the command is simple. What we need to do is type 'import'.
 
 ```{r setup, warning = FALSE, message = FALSE}
 library(statnet)
@@ -35,7 +36,15 @@ library(knitr)
 ```
 
 
-### Load data
+### Step 2: Load data
+
+I'll make a network gif for the formation and dissolution of interstate rivalry from 1987 to 2002 with 5-year intervals (four time points). So, two pieces of information are necessary: 1) a list of rivalries for the given time points, and 2) a list of countries. The current version of `ndtv` package doesn't allow varying numbers of vertices, which means the number of vertices must be the same for all time points. Indeed, some countries newly appeared and others were gone from 1987 to 2002. However, because of the limitation, I put all countries which existed for the given period in my node list (node.csv). 
+
+Additionally, I'll color the countries using their geographical location. For the color of the nodes, I'll use COW country code, which is included in 'vtx1987.csv' file below.  
+
+You can find these toy datasets from my [github](https://github.com/bomibonnie/website-hugo/tree/master/content/post).
+
+
 ```{r data, warning = FALSE, message = FALSE}
 riv <- import("C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta")
 vtx <- import("C:/Users/bomim/Documents/website-hugo//content/post/node.csv")
@@ -43,14 +52,21 @@ vtx87 <- import("C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv"
 
 ```
 
-#### Look at the data
+#### Step 3: Look at the data
+
+Let's look at the data we loaded in the previous step. The object 'riv' is the list of rivalries in the given time points. 'riv' has four columns: year, stateabb1, stateabb2, and no. Since rivalries are not directed (if Country A is Country B's rival, then Country B is Country A's rival as well), the order of stateabb1 and stateabb2 doesn't matter. I'll use 'no' variable to identify the time points but you can use 'year' instead.
+
+Because our edge list (the list of rivalries) is made using stateabb (i.e., AAB, AFG, ALB...), our node list must be a list of stateabb. 
+
+For the color of nodes, I add more info to the object, 'vtx87'. The nodes will be matched using the 'stateabb' variable.
 
 ```{r dataex, warning = FALSE, message = FALSE, tidy=TRUE}
 head(riv)
+head(vtx)
 head(vtx87)
 ```
 
-### Make a list of networks
+### Step 4: Make a list of networks
 
 ```{r network, warning = FALSE, message = FALSE}
 nv <- nrow(vtx)
@@ -75,10 +91,14 @@ set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
 
 cols1<-vector()
 for(i in 1:204){
-  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
-         cols1[i] <- "red", cols1[i]<-"blue")
+  ifelse(rivlist[[1]]$val[[i]]$ccode<200, cols1[i] <- "red", 
+         ifelse((rivlist[[1]]$val[[i]]$ccode>=200)&(rivlist[[1]]$val[[i]]$ccode<400), cols1[i]<-"orange",
+                ifelse((rivlist[[1]]$val[[i]]$ccode>=400)&(rivlist[[1]]$val[[i]]$ccode<600), cols1[i]<-"yellow",
+                       ifelse((rivlist[[1]]$val[[i]]$ccode>=600)&(rivlist[[1]]$val[[i]]$ccode<800),cols1[i]<-"green", cols1[i]<-"blue"))))
 }
 ```
+
+** You can find more commands for data managemen in R [here](https://github.com/bomibonnie/R-Workshops) from my github. 
 
 * Make a plot 
 
@@ -90,13 +110,12 @@ plot(rivlist[[1]],
 ```
 
 
-### Make GIFs!
+### Step 5: Make GIFs!
 
 ```{r dynamics, warning = FALSE, message = FALSE, eval=FALSE}
 rivdyn <- networkDynamic(network.list = rivlist)
 rivgif <- compute.animation(rivdyn, 
-                            default.dist = 3,
-                            animation.mode = "MDSJ",
+                            animation.mode = "kamadakawai",
                             verbose = FALSE)
 
 ```
