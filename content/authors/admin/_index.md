@@ -61,4 +61,4 @@ user_groups:
 
 ---
 
-I am a Ph.D student of political science at the University of Iowa. I received my B.A. in political science and M.A. in international relations from Seoul National University. My research and teaching interests include international conflict and cooperation, international rivalries, and political methodology.
+I am a Ph.D student of political science at the University of Iowa. I received my BA in political science and MA in international relations from Seoul National University. My research and teaching interests include international conflict and cooperation, international rivalries, and political methodology.
