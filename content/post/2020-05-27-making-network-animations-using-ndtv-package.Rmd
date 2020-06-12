@@ -122,7 +122,7 @@ Let's look at the rivalry network in 1987 (time point 1). I use the vector of co
 ```{r plot, warning = FALSE, message = FALSE}
 plot(rivlist[[1]], 
      vertex.col=cols1, 
-     edge.col="gray50",
+     edge.col="grey50",
      xpd=T)
 ```
 
