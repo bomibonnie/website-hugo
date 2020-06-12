@@ -14,7 +14,7 @@ menu:
 weight: 1
 ---
 
-In this page, I'll share Stata commands for summary statistics. The dataset I use here is Militarized Interstate Disputes (v4.3) dataset from the Correlates of War Project. You can downlodad the dataset [here](https://correlatesofwar.org/data-sets/MIDs).
+In this page, I'll share Stata commands for summary statistics. The dataset I use here is Militarized Interstate Disputes (v4.3) dataset from the Correlates of War Project. You can download the dataset [here](https://correlatesofwar.org/data-sets/MIDs).
 
 
 ### Opening data with `use` command
@@ -61,7 +61,7 @@ Since the value doesn't have specific meaning (nominal), mean and median are not
 ```{stata}
 tabulate outcome
 
-tab outcome, m
+tab outcome, missing
 ```
 We can see that 5 (Stalemate) is the mode of this variable. 
 
@@ -80,7 +80,7 @@ The mean of the maximum duration of disputes is 161.72 and the median is 41.
 If you have missing values such as -9 in the previous example, you might want to exclude those values. Then, use 'if' option.
 
 
-### Looking at variables
+### Visualization
 
 Let's make histograms and box plots! Histograms are helpful to look at the distribution of variables. The command is 'histogram' or 'hist'. You can add more options to make a prettier histogram.
 
