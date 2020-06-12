@@ -45,17 +45,26 @@ When you type 'describe', You can see the names and labels of all variables in t
 
 Let's look at 'outcome' variable in the MIDA dataset. 'outcome' shows the outcome of dispute like below. 
 
-1 - Victory for side A
-2 - Victory for side B
-3 - Yield by side A
-4 - Yield by side B
-5 - Stalemate
-6 - Compromise
-7 - Released
-8 - Unclear
-9 - Joins ongoing war
--9 - Missing
-
+|1 | Victory for side A |
+|--|:------------------:|
+|2 | Victory for side B |
+|--|:------------------:|
+|3 | Yield by side A    |
+|--|:------------------:|
+|4 | Yield by side B    |
+|--|:------------------:|
+|5 | Stalemate          |
+|--|:------------------:|
+|6 | Compromise         |
+|--|:------------------:|
+|7 | Released           |
+|--|:------------------:|
+|8 | Unclear            |
+|--|:------------------:|
+|9 | Joins ongoing war  |
+|--|:------------------:|
+|-9| Missing            |
+|--|:------------------:|
 Since the value doesn't have specific meaning (nominal), mean and median are not meaningful. Let's find the mode of this variable. 'tabulate' or simply 'tab' is useful to figure out the mode.
 
 ```{stata}
