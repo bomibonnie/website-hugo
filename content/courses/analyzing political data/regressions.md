@@ -18,9 +18,17 @@ Below are Stata commands for correlation and regressions.
 
 ### Correlation 
 
+```{stata}
 
+```
 ### Regression
 
+```{stata}
+
+```
 
 ### Visualization using `margins`
 
+```{stata}
+
+```
