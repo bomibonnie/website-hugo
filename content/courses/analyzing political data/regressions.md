@@ -30,7 +30,7 @@ scatter perc_turnout perc_mille
 ```
 Optional: 
 1) make it prettier using `grstyle`. 
-2) add the best fitted link to the scatter plot.
+2) add the best fitted line to the scatter plot.
 
 
 ```{stata}
