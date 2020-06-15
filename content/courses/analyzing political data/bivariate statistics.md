@@ -14,9 +14,9 @@ menu:
 weight: 2
 ---
 
-Here are some Stata commands for bivariate statistics.
+Here are Stata commands for bivariate statistics.
 
-Dara from CCES [Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910/DVN/ZSBZ7K)
+Data from CCES [Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910/DVN/ZSBZ7K)
 
 
 
