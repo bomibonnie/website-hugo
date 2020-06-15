@@ -1,6 +1,6 @@
 ---
 title: Multiple Rivals and Public Opinion
-summary: Do Doves Cry When They Face Multiple Rivals?
+summary: Do doves cry when they face multiple rivals?
 
 tags:
 - Multiple Rivals
