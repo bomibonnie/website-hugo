@@ -14,7 +14,7 @@ menu:
 weight: 3
 ---
 
-Below are Stata commands for correlation and regressions.
+For this correlation and regression practice, I use a county-level voter turnout dataset. You can get this dataset by [request](bomi-lee-1@uiowa.edu).
 
 ### Correlation 
 
