@@ -30,6 +30,14 @@ subtitle = ""
     tag = "Networks"
   
   [[content.filter_button]]
+    name = "Multiple Rivals"
+    tag = "MultipleRivals"
+  
+  [[content.filter_button]]
+    name = "Survey Experiment"
+    tag = "SurveyExperiment"
+    
+  [[content.filter_button]]
     name = "Climate Change"
     tag = "ClimateChange"
 

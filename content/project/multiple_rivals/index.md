@@ -3,8 +3,8 @@ title: Multiple Rivals and Public Opinion
 summary: Do doves cry when they face multiple rivals?
 
 tags:
-- Multiple Rivals
-- Survey Experiment
+- MultipleRivals
+- SurveyExperiment
 
 date: "2020-06-15T00:00:00Z"
 
