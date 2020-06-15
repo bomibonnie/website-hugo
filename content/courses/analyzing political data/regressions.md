@@ -19,16 +19,16 @@ For this correlation and regression practice, I use a county-level voter turnout
 Load the dataset first.
 
 ```{stata}
-use county_turnout.dta
+use "county_turnout.dta"
 ```
-The research question for this tutorial is: Are counties with more millennials more likely to have lower turnout?
+The research question for this tutorial is: Are counties with more millennials likely to have lower turnout?
 
 Let's make a scatter plot.
 
 ```{stata}
 scatter perc_turnout perc_mille
 ```
-* Optional: make it prettier using `grstyle` and add the best fitted link to the scatter plot.
+* Optional: 1) make it prettier using `grstyle`, 2) add the best fitted link to the scatter plot.
 
 
 ```{stata}
@@ -44,7 +44,7 @@ Is there a linear relationship?
 
 ### Correlation 
 
-Let's look at Pearson's r!
+Let's look at the correlation between thses two variables.
 
 ```{stata}
 pwcorr perc_turnout perc_mille
