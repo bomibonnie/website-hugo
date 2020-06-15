@@ -36,5 +36,5 @@ First, In Type Ⅰ triangle, a rivalry is connected to a shared friend, thus, th
 In this project, I examine whether and how various triangular relationships affect interstate relationships particularly rivalry duration. Network analysis is employed to capture the various triangles. Preliminary analyses of rivalry duration show that rivalries are more likely to terminate when they have a common friend and particularly, the friend is a major power.
 
 {{% alert note %}}
-You can look at my slides by clicking **pdf** button above.
+You can look at my slides by clicking **PDF** above.
 {{% /alert %}}
