@@ -7,7 +7,14 @@ date: "2020-05-24T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
-url_pdf: "climatebonesofcontention2020.pdf"
+
+links:
+- icon: twitter
+  icon_pack: fab
+  name: Follow
+  url: https://twitter.com/bomiklee
+url_code: ""
+url_pdf: "Climatebonesofcontention2020.pdf"
 
 image:
   caption: Photo by Bill Oxford on Unsplash
