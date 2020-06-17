@@ -50,7 +50,7 @@ social:
   icon_pack: fab
   link: https://github.com/bomibonnie
 - icon: email
-  icon_pack: fas
+  icon_pack: envelope
   link: "mailto:bomi-lee-1@uiowa.edu"
   
 # Link to a PDF of your resume/CV from the About widget.
