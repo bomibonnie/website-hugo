@@ -20,7 +20,7 @@ image:
   caption: Photo by Bill Oxford on Unsplash
   focal_point: Smart
 ---
-With [Sara McLaughlin Mitchell](http://www.saramitchell.org/) and Cody J. Schmidt 
+With [Sara McLaughlin Mitchell](http://www.saramitchell.org/) and [Cody J. Schmidt](https://www.codyjschmidt.com/) 
 
 Abstract: 
 
