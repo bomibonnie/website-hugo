@@ -15,7 +15,7 @@ role: Ph.D candidate
 # Organizations/Affiliations
 organizations:
 - name: University of Iowa
-  url: ""
+  url: "https://clas.uiowa.edu/polisci/people/bomi-lee"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include international conflict, rivalry, and political methodology.
@@ -49,7 +49,10 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/bomibonnie
-
+- icon: email
+  icon_pack: fas
+  link: mailto:bomi-lee-1@uiowa.edu
+  
 # Link to a PDF of your resume/CV from the About widget.
 
 
