@@ -1,7 +1,8 @@
 ---
 # Course title, summary, and position.
 linktitle: Analyzing Political Data
-summary: This course (1) introduces you to research and quantitative analysis in political science, and (2) helps you become critical consumers of quantitative analysis used in political and policy-oriented reporting.
+summary: This course (1) introduces undergraduate students to research and quantitative analysis in political science, and (2) helps them become critical consumers of quantitative analysis used in political and policy-oriented reporting. You can find my course outline and Stata tutorials for this course by clicking the course title above. 
+
 weight: 1
 
 # Page metadata.
