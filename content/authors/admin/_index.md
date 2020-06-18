@@ -30,6 +30,9 @@ education:
   - course: PhD candidate in Political Science
     institution: University of Iowa
     year: 
+  - course: MA in Political Science
+    institution: University of Iowa
+    year: 2019
   - course: MA in International Relations
     institution: Seoul National University
     year: 2013
