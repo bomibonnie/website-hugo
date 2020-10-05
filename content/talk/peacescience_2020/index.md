@@ -64,7 +64,3 @@ projects:
 math: false
 ---
 
-{{% alert note %}}
-You can look over my presentation slides by clicking **pdf** button above.
-{{% /alert %}}
-
