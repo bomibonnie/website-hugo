@@ -14,33 +14,38 @@
   weight = 2
 
 [[main]]
-  name = "WorkingPapers"
+  name = "Publications"
   url = "#publications"
   weight = 3
+  
+[[main]]
+  name = "WorkingPapers"
+  url = "#workingpapers"
+  weight = 4
 
 [[main]]
   name = "Presentations"
   url = "#talks"
-  weight = 4
+  weight = 5
 
 [[main]]
   name = "Teaching"
   url = "courses/"
-  weight = 5
+  weight = 6
 
 [[main]]
   name = "Posts"
   url = "#posts"
-  weight = 6
+  weight = 7
   
 [[main]]
   name = "Contact"
   url = "#contact"
-  weight = 7
+  weight = 8
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 [[main]]
     name = "CV"
     url = "Lee_CV_Oct2020v2.pdf"
-    weight = 8
+    weight = 9
