@@ -1,5 +1,6 @@
 ---
-title: "Climate Bones of Contention"
+title: "Climate Bones of Contention: How Climate Change Influences Territorial, Maritime, and River Interstate Conflicts"
+
 authors:
 - Cody J. Schmidt
 - admin

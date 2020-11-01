@@ -28,7 +28,7 @@ tags:
 - Networks
 
 
-featured: true
+featured: false
 
 
 # Featured image
