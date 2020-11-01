@@ -2,9 +2,9 @@
 title: "Climate Bones of Contention: How Climate Change Influences Territorial, Maritime, and River Interstate Conflicts"
 
 authors:
-- [Cody J. Schmidt](https://www.codyjschmidt.com/)
+- Cody J. Schmidt
 - admin
-- [Sara McLaughlin Mitchell](http://www.saramitchell.org/)  
+- Sara McLaughlin Mitchell  
  
 date: "2020-10-31T00:00:00Z"
 doi: ""
@@ -22,7 +22,7 @@ publication_types: ["2"]
 publication: []
 publication_short: []
 
-abstract: Many scholars examine the relationship between climate variability and intrastate conflict onset. While empirical findings in this literature are mixed, we know less about how climate changes increase the risks for interstate conflicts between countries. This article studies climate variability using the issue approach to world politics. We examine whether climate variability influences the onset and militarization of interstate diplomatic conflicts and whether these effects are similar across issues that involve sovereignty claims for land (territory) or water (maritime, river). We focus on two theoretical mechanisms: scarcity (abundance) and uncertainty. We measure these concepts empirically through climate deviation (e.g. droughts/floods, heat waves/cold spells) and climate volatility (greater short-term variance in precipitation/temperature). Analyses of issue claims in the Western Hemisphere and Europe (1901-2001) show that greater deviations and volatility in climate conditions increase risks for new diplomatic conflicts and militarization of ongoing issues and that climate change acts as a trigger for revisionist states.
+abstract: 
 
 # Summary. An optional shortened abstract.
 summary:
