@@ -44,7 +44,7 @@ image:
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects:
-- internal-project
+- triangle
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
