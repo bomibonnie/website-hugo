@@ -2,9 +2,9 @@
 title: "Climate Bones of Contention: How Climate Change Influences Territorial, Maritime, and River Interstate Conflicts"
 
 authors:
-- Cody J. Schmidt
+- [Cody J. Schmidt](https://www.codyjschmidt.com/)
 - admin
-- Sara McLaughlin Mitchell 
+- [Sara McLaughlin Mitchell](http://www.saramitchell.org/)  
  
 date: "2020-10-31T00:00:00Z"
 doi: ""
@@ -46,8 +46,8 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects:
-- ClimateChange
+projects: []
+
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
