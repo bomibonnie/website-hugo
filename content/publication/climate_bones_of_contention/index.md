@@ -31,7 +31,7 @@ tags:
 - ClimateChange
 
 
-featured: true
+featured: false
 
 
 # Featured image
