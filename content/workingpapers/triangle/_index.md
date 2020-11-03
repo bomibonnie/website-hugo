@@ -7,16 +7,14 @@ title: Triangles, Major Powers, and Rivalry Duration
 date: "2020-09-10T00:00:00Z"
 lastmod: "2020-11-01T00:00:00Z"
 draft: false  # Is this a draft? true/false
-toc: true  # Show table of contents? true/false
+toc: false  # Show table of contents? true/false
 type: docs  # Do not modify.
 
 # Add menu entry to sidebar.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
-menu:
-  example:
-    name: Abstract
-    weight: 1
+menu:[]
+
 ---
 
 ## Abstract 
