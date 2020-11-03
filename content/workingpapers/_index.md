@@ -1,6 +1,6 @@
 ---
 title: Working Papers
-view: 4
+view: 2
 
 # Optional header image (relative to `static/img/` folder).
 header:
