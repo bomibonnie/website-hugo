@@ -1,8 +1,10 @@
 ---
 publishDate: "2020-11-01T00:00:00z"
 
-
 title: "Triangles, Major Powers, and Rivalry Duration""
+
+authors:
+- admin
 
 date: "2020-09-10T00:00:00z"
 
