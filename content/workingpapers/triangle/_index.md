@@ -2,6 +2,8 @@
 linktitle: Triangles, Major Powers, and Rivalry Duration
 summary: Presented at the 2020 APSA Annual Meeting.
 
+weight: 1
+
 # Page metadata.
 title: Triangles, Major Powers, and Rivalry Duration
 date: "2020-09-10T00:00:00Z"
@@ -13,7 +15,10 @@ type: docs  # Do not modify.
 # Add menu entry to sidebar.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
-menu:[]
+menu:
+  example:
+    name: Working Papers
+    weight: 1
 
 ---
 

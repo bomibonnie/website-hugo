@@ -18,8 +18,8 @@ type: docs  # Do not modify.
 # - weight: Position of link in menu.
 menu:
   example:
-    name: Course Outline
-    weight: 1
+    name: Courses
+    weight: 2
 ---
 
 ## 1. Laying the Foundation & Exploring Data
