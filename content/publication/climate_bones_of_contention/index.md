@@ -19,7 +19,7 @@ publishDate: "2020-10-31T00:00:00Z"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: "Journal of Peace Research"
+publication: "*Journal of Peace Research, 58(1)*"
 publication_short: "JPR"
 
 abstract: Many scholars examine the relationship between climate variability and intrastate conflict onset. While empirical findings in this literature are mixed, we know less about how climate changes increase the risks for interstate conflicts between countries. This article studies climate variability using the issue approach to world politics. We examine whether climate variability influences the onset and militarization of interstate diplomatic conflicts and whether these effects are similar across issues that involve sovereignty claims for land or water. We focus on two theoretical mechanisms, scarcity and uncertainty. We measure these concepts empirically through climate deviation and climate volatility. Analyses of issue claims in the Western Hemisphere and Europe show that greater deviations and volatility in climate conditions increase risks for new diplomatic conflicts and militarization of ongoing issues and that climate change acts as a trigger for revisionist states.
@@ -33,6 +33,7 @@ tags:
 
 featured: false
 
+url_source: 'https://journals.sagepub.com/doi/full/10.1177/0022343320973738'
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
