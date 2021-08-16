@@ -23,7 +23,7 @@ date_format = "Jan 2006"
   company_url = "https://ppc.uiowa.edu/isrc/workshops"
   location = ""
   date_start = "2019-08-01"
-  date_end = ""
+  date_end = "2021-05-14"
   description = """Taught workshops:
   
   * Introduction and Data Management Using R
