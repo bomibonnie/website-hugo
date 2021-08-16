@@ -10,12 +10,12 @@ authors:
 superuser: true
 
 # Role/position
-role: Ph.D candidate
+role: Post-doctoral Scholar
 
 # Organizations/Affiliations
 organizations:
-- name: University of Iowa
-  url: "https://clas.uiowa.edu/polisci/people/bomi-lee"
+- name: University of Kentucky
+  url: "https://polisci.as.uky.edu/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include international conflict, rivalry, and political methodology.
@@ -27,9 +27,9 @@ interests:
 
 education:
   courses:
-  - course: PhD candidate in Political Science
+  - course: PhD in Political Science
     institution: University of Iowa
-    year: 
+    year: 2021
   - course: MA in Political Science
     institution: University of Iowa
     year: 2019
@@ -54,13 +54,13 @@ social:
   link: https://github.com/bomibonnie
 - icon: envelope
   icon_pack: fas
-  link: "mailto:bomi-lee-1@uiowa.edu"
+  link: "mailto:bomi.lee@uky.edu"
   
 # Link to a PDF of your resume/CV from the About widget.
 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "bomi-lee-1@uiowa.edu"
+email: "bomi.lee@uky.edu"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
@@ -68,4 +68,4 @@ user_groups:
 
 ---
 
-I am a Ph.D student of political science at the University of Iowa. I received my BA in political science and MA in international relations from Seoul National University. My research and teaching interests include international conflict and cooperation, international rivalries, and political methodology.
+I am a post-doctoral scholar at the Department of Political Science at the University of Kentucky. I am part of an National Science Foundation (NSF)-funded research program on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html). I received my BA in political science, MA in international relations from Seoul National University, and PhD in Political Science from the University of Iowa. My research focuses on interconnectedness of amity and enmity in international relations. In my dissertation, *Interconnected Rivalries*, I examine the interdependence among interstate rivalries by focusing on triangularities and centralities in rivalry networks. I also have ongoing co-authored projects on climate change and interstate conflict. 
