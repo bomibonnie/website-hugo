@@ -81,16 +81,16 @@ edit_page = {repo_url = "https://github.com/gcushen/hugo-academic", content_dir 
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "bomi-lee-1@uiowa.edu"
+email = "bomi.lee1@uky.edu"
 phone = ""
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "367 Schaeffer Hall", city = "Iowa City", region = "IA", postcode = "52242", country = "United States", country_code = "US"}
+address = {street = "1629 Patterson Office Tower", city = "Lexington", region = "KY", postcode = "40506", country = "United States", country_code = "US"}
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-coordinates = {latitude = "41.660757", longitude = "-91.535572"}
+coordinates = {latitude = "38.03885227896606", longitude = "-84.50428976018327"}
  
 # Directions for visitors to locate you.
 directions = ""
