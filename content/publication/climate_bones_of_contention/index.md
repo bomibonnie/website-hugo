@@ -40,7 +40,7 @@ url_source: 'https://journals.sagepub.com/doi/full/10.1177/0022343320973738'
 image:
   caption: ''
   focal_point: ''
-  preview_only: true
+  preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
