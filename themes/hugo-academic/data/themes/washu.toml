@@ -8,9 +8,9 @@ light = true
 primary = "#a51417"
 
 # Menu
-menu_primary = "a51417"
+menu_primary = "#a51417"
 menu_text = "#fff"
-menu_text_active = "rgb(208, 255, 56)"
+menu_text_active = "rgb(0, 115, 96)"
 menu_title = "#fff"
 
 # Home sections
