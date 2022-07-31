@@ -86,11 +86,11 @@ phone = ""
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "1629 Patterson Office Tower", city = "Lexington", region = "KY", postcode = "40506", country = "United States", country_code = "US"}
+address = {street = "One Brookings Drive", city = "St. Louis", region = "MO", postcode = "63130", country = "United States", country_code = "US"}
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-coordinates = {latitude = "38.03885227896606", longitude = "-84.50428976018327"}
+coordinates = {latitude = "38.6487983", longitude = "-90.3125344"}
  
 # Directions for visitors to locate you.
 directions = ""

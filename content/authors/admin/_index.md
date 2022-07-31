@@ -10,12 +10,12 @@ authors:
 superuser: true
 
 # Role/position
-role: Post-doctoral Scholar
+role: Postdoctoral Research Fellow
 
 # Organizations/Affiliations
 organizations:
-- name: University of Kentucky
-  url: "https://polisci.as.uky.edu/"
+- name: Washington University in St. Louis
+  url: "https://polisci.wustl.edu/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include international conflict, rivalry, and political methodology.
@@ -68,4 +68,4 @@ user_groups:
 
 ---
 
-I am an NSF-funded post-doctoral scholar at the Department of Political Science at the University of Kentucky. I am part of a National Science Foundation (NSF)-funded research program on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html). I received my BA in political science, MA in international relations from Seoul National University, and PhD in Political Science from the University of Iowa. My research focuses on interconnectedness of amity and enmity in international relations. In my dissertation, *Interconnected Rivalries*, I examine the interdependence among interstate rivalries by focusing on triangular relationships and centrality in rivalry networks. I also have ongoing co-authored projects on climate change and interstate conflict. 
+I am an NSF-funded post-doctoral research fellow at the Department of Political Science at Washington University in St. Louis. I am part of a National Science Foundation (NSF)-funded research program on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html). I received my BA in political science, MA in international relations from Seoul National University, and PhD in Political Science from the University of Iowa. My research focuses on interconnectedness of amity and enmity in international relations. In my dissertation, *Interconnected Rivalries*, I examine the interdependence among interstate rivalries by focusing on triangular relationships and centrality in rivalry networks. I also have ongoing co-authored projects on climate change and interstate conflict. 
