@@ -19,6 +19,16 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[item]]
+  organization = "Political Networks Section of APSA"
+  organization_url = "https://conference.polinetworks.org/political-networks-conference/2022-workshops"
+  title = "Introduction to Network Analysis in R"
+  url = "https://github.com/bomibonnie/PolNetIntroNetworkAnalysis2022"
+  certificate_url = ""
+  date_start = "2022-06-13"
+  date_end = ""
+  description = "This workshop will cover a comprehensive introduction to network analysis using the R programming language. Participants will be introduced to basic network concepts, network data management, and network statistics (e.g., centrality, triad) using the igraph and Statnet packages. Following some introduction slides, participants will have chances to practice using simple toy datasets and real-world political science data (e.g., alliances). The last part of the workshop will cover network configurations in signed networks (with both positive and negative ties) using the signet package."
+  
+[[item]]
   organization = "Iowa Social Science Research Center"
   organization_url = "https://ppc.uiowa.edu/isrc/workshops"
   title = "Data Management using R"
