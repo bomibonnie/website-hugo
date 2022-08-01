@@ -54,13 +54,13 @@ social:
   link: https://github.com/bomibonnie
 - icon: envelope
   icon_pack: fas
-  link: "mailto:bomi.lee@uky.edu"
+  link: "mailto:bomi@wustl.edu"
   
 # Link to a PDF of your resume/CV from the About widget.
 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "bomi.lee@uky.edu"
+email: "bomi@wustl.edu"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
