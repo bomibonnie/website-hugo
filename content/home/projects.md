@@ -33,14 +33,15 @@ subtitle = ""
     name = "Multiple Rivals"
     tag = "MultipleRivals"
   
-  [[content.filter_button]]
-    name = "Survey Experiment"
-    tag = "SurveyExperiment"
-    
+
   [[content.filter_button]]
     name = "Climate Change"
     tag = "ClimateChange"
 
+  [[content.filter_button]]
+    name = "Women as Leaders"
+    tag = "WomenLeaders"
+    
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
   columns = "2"
