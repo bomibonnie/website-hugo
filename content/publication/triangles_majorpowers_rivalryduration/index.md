@@ -26,7 +26,7 @@ abstract: Why do some international rivalries last longer than others? Most riva
 summary:
 
 tags:
-- Triangle
+- Triangles
 - Networks
 
 featured: false

@@ -3,6 +3,7 @@ title: Triangles in Networks
 summary: 
 tags:
 - Networks
+- Triangles
 date: "2020-05-23T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
