@@ -31,4 +31,4 @@ url_video: ""
 slides: ""
 ---
 
-In this project, I examine whether and how various triangular relationships affect interstate relationships particularly rivalry duration. Network analysis is employed to capture the various triangles. 
+In this project, I examine whether and how various triangular relationships of rivalries and alliances affect 1) long-term interstate relationships and 2) short-term conflict propensities. Network analysis is employed to capture the various types of triangles. 

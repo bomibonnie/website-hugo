@@ -1,6 +1,6 @@
 ---
-title: Climate Bones of Contention
-summary: Do precipitation and temperature deviation and volatility affect interstate conflict?
+title: Climate Change and Conflict
+summary: Do climate variability and volatility affect interstate conflict?
 tags:
 - ClimateChange
 date: "2020-05-24T00:00:00Z"
