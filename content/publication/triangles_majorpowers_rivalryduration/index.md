@@ -31,7 +31,7 @@ tags:
 
 featured: false
 
-url_source: ''
+url_source: 'https://journals.sagepub.com/doi/10.1177/00220027221134781'
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
