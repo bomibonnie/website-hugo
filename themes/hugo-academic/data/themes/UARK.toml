@@ -2,7 +2,7 @@
 name = "UARK"
 
 # Is theme light or dark?
-light = true
+light = false
 
 # Primary
 primary = "rgb(157, 34, 53)"
