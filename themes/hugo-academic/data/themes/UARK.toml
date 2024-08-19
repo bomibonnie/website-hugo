@@ -1,0 +1,18 @@
+# Theme metadata
+name = "UARK"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#9D2235"
+
+# Menu
+menu_primary = "#9D2235"
+menu_text = "#FFFFFF"
+menu_text_active = "#F2F2F4"
+menu_title = "#FFFFFF"
+
+# Home sections
+home_section_odd = "#FFFFFF"
+home_section_even = "#FFFFFF"
