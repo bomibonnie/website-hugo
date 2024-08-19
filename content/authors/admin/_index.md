@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: Postdoctoral Research Fellow
+role: Visiting Assistant Professor
 
 # Organizations/Affiliations
 organizations:
