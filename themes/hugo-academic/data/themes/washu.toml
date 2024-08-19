@@ -2,7 +2,7 @@
 name = "washu"
 
 # Is theme light or dark?
-light = true
+light = false
 
 # Primary
 primary = "rgb(157, 34, 53)"
@@ -10,7 +10,7 @@ primary = "rgb(157, 34, 53)"
 # Menu
 menu_primary = "rgb(157, 34, 53)"
 menu_text = "rgb(255, 255, 255)"
-menu_text_active = "rgb(242, 242, 242)"
+menu_text_active = "rgb(199, 200, 202)"
 menu_title = "rgb(255, 255, 255)"
 
 # Home sections
