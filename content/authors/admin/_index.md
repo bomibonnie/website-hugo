@@ -53,13 +53,13 @@ social:
   link: https://github.com/bomibonnie
 - icon: envelope
   icon_pack: fas
-  link: "mailto:bomi.may.lee@gmail.com"
+  link: "mailto:bomil@uark.edu"
   
 # Link to a PDF of your resume/CV from the About widget.
 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "bomi.may.lee@gmail.com" 
+email: "bomil@uark.edu" 
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
