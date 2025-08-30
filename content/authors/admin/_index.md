@@ -14,7 +14,7 @@ role: Visiting Assistant Professor
 
 # Organizations/Affiliations
 organizations:
-- name: University of Arkansas
+- name: Bucknell University
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include international conflict, rivalry, and political methodology.
@@ -53,13 +53,13 @@ social:
   link: https://github.com/bomibonnie
 - icon: envelope
   icon_pack: fas
-  link: "mailto:bomil@uark.edu"
+  link: "mailto:bomi.lee@bucknell.edu"
   
 # Link to a PDF of your resume/CV from the About widget.
 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "bomil@uark.edu" 
+email: "bomi.lee@bucknell.edu" 
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
@@ -67,4 +67,4 @@ user_groups:
 
 ---
 
-I am a Visiting Assistant Professor at the University of Arkansas. I was part of a National Science Foundation (NSF)-funded research program on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html). I received my BA in political science, MA in international relations from Seoul National University, and PhD in Political Science from the University of Iowa. My research focuses on international conflict. In my dissertation, *Interconnected Rivalries*, I examine the interdependence among interstate rivalries by focusing on triangular relationships and centrality in rivalry networks. I also have ongoing co-authored projects on climate change and interstate conflict. 
+I am a Visiting Assistant Professor at Bucknell University. I was part of a National Science Foundation (NSF)-funded research program on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html). I received my BA in political science, MA in international relations from Seoul National University, and PhD in Political Science from the University of Iowa. My research focuses on international conflict. In my dissertation, *Interconnected Rivalries*, I examine the interdependence among interstate rivalries by focusing on triangular relationships and centrality in rivalry networks. I also have ongoing co-authored projects on climate change and interstate conflict. 
