@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: Quantitative Methods
 summary: This Fall 2025 course at Bucknell University is designed to (1) provide undergraduate students with foundational skills in political science research methods and statistical analysis, and (2) develop their ability to critically evaluate quantitative data presented in political journalism and policy debates. I will be posting R scripts throughout the semester to support your learning. You can find a a research guide for [POLS 296: Quantitative Methods here](https://researchbysubject.bucknell.edu/pols296).
-weight: 1
+weight: 2
 
 # Page metadata.
 title: Course Outline
