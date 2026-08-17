@@ -3,7 +3,7 @@
     "path": "~/Documents/website-hugo/config/_default/menus.toml",
     "project_path": "config/_default/menus.toml",
     "type": "toml",
-    "hash": "1224588443",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1786994064002.0,
@@ -12,7 +12,7 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "38,8",
+        "cursorPosition": "28,16",
         "scrollLine": "21"
     },
     "folds": "",
