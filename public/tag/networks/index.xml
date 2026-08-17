@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networks | Bomi K. Lee</title>
+    <link>https://bomiklee.com/tag/networks/</link>
+      <atom:link href="https://bomiklee.com/tag/networks/index.xml" rel="self" type="application/rss+xml" />
+    <description>Networks</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 10 Sep 2020 12:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://bomiklee.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Networks</title>
+      <link>https://bomiklee.com/tag/networks/</link>
+    </image>
+    
+    <item>
+      <title>Beyond a Dyadic Approach-Centrality, Triangles, and Rivalry Duration</title>
+      <link>https://bomiklee.com/talk/apsa_2020/</link>
+      <pubDate>Thu, 10 Sep 2020 12:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/talk/apsa_2020/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    You can look over my presentation slides by clicking &lt;strong&gt;pdf&lt;/strong&gt; button above.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Triangles, Major Powers, and Rivalry Duration</title>
+      <link>https://bomiklee.com/workingpapers/conference-paper/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/workingpapers/conference-paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Triangles in Networks</title>
+      <link>https://bomiklee.com/project/triangle/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/project/triangle/</guid>
+      <description>&lt;p&gt;Do triangular relationships influence international relations? When focusing on a rivalry in cross-networks of positive and negative relationships, one can be embedded in three types of triangles. Type Ⅰ consists of one rivalry and two positive relationships, Type Ⅱ of two rivalries and one positive relationship, and Type Ⅲ of three rivalries.  Based on Heider’s (1946) balance theory, Type Ⅱ triangle is balanced, thus, it is more likely to maintain while Type Ⅰ and Ⅲ are less likely because they are imbalanced.&lt;/p&gt;
+&lt;p&gt;First, In Type Ⅰ triangle, a rivalry is connected to a shared friend, thus, the friend of my enemy is my friend. When two rivals have a common friend, we can expect that the third party can be a potential mediator. For instance, when the tension between South Kore and Japan escalated over the disputed territory, the US tried to mediate their conflict because both South Korea and Japan are US’ alliance partners. Second, Type Ⅱ triangle can be more maintainable since the third party is one’s friend as well as the other’s enemy. In other words, the enemy of my enemy is my friend. Type Ⅱ is consistent with extended deterrence. When two friends have a common enemy, their friendship can be stronger and their rivalries can maintain longer. Lastly, in Type Ⅲ triangle, the enemy of my enemy is also my enemy. Under this situation, all countries have a common enemy, thus, if the severity levels are not equal, then one of the three rivalries can be weaker.&lt;/p&gt;
+&lt;p&gt;In this project, I examine whether and how various triangular relationships affect interstate relationships particularly rivalry duration. Network analysis is employed to capture the various triangles. Preliminary analyses of rivalry duration show that rivalries are more likely to terminate when they have a common friend and particularly, the friend is a major power.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    You can look at my slides by clicking &lt;strong&gt;PDF&lt;/strong&gt; above.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>https://bomiklee.com/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/slides/example/</guid>
+      <description>&lt;h1 id=&#34;triangles-major-powers-and-rivalry-duration&#34;&gt;Triangles, Major Powers, and Rivalry Duration&lt;/h1&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://bomibonnie.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bomi K. Lee&lt;/a&gt; University of Iowa&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/iowa2.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;rivalries-dyadic-interactions&#34;&gt;Rivalries: dyadic interactions&lt;/h2&gt;
+&lt;img data-src=&#34;https://bomiklee.com/img/rivdyads.png&#34;&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/iowa2.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;rivalries-in-triadic-relationships&#34;&gt;Rivalries in Triadic Relationships?&lt;/h2&gt;
+&lt;img data-src=&#34;https://bomiklee.com/img/triangle1.png&#34;&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
+One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+&lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+Three
+&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/iowa.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/University_of_Iowa_Logo.png&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://spectrum.chat/academic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

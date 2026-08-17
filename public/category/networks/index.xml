@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networks | Bomi K. Lee</title>
+    <link>https://bomiklee.com/category/networks/</link>
+      <atom:link href="https://bomiklee.com/category/networks/index.xml" rel="self" type="application/rss+xml" />
+    <description>Networks</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://bomiklee.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Networks</title>
+      <link>https://bomiklee.com/category/networks/</link>
+    </image>
+    
+    <item>
+      <title>Making Network Animations Using NDTV package</title>
+      <link>https://bomiklee.com/post/making-network-animations-using-ndtv-package/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/post/making-network-animations-using-ndtv-package/</guid>
+      <description>
+
+
+&lt;p&gt;The following commands are for making a network animation using &lt;code&gt;statnet&lt;/code&gt; and &lt;code&gt;ndtv&lt;/code&gt; in R.&lt;/p&gt;
+&lt;div id=&#34;step-1-load-packages&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 1: Load packages&lt;/h3&gt;
+&lt;p&gt;I’ll use &lt;code&gt;statnet&lt;/code&gt;, &lt;code&gt;ndtv&lt;/code&gt;, and &lt;code&gt;rio&lt;/code&gt; packages to make a network gif. &lt;code&gt;statnet&lt;/code&gt; and &lt;code&gt;ndtv&lt;/code&gt; packages are necessary but you can use other packages instead of &lt;code&gt;rio&lt;/code&gt; for loading data. I prefer &lt;code&gt;rio&lt;/code&gt; because the command is simple. What we need to do is type ‘import’ as shown in Step 2.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(statnet)
+library(ndtv)
+library(rio)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-load-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 2: Load data&lt;/h3&gt;
+&lt;p&gt;I’ll make a network animation for the formation and dissolution of interstate rivalry from 1987 to 2002 with 5-year intervals (four time points). So, two pieces of information are necessary: 1) a list of rivalries for the given time points (edge list), and 2) a list of countries (node list). The current version of &lt;code&gt;ndtv&lt;/code&gt; package doesn’t allow varying numbers of vertices, which means the number of vertices must be the same for all time points. Indeed, some countries newly appeared while others disappeared during the given time period. However, because of the limitation in &lt;code&gt;ndtv&lt;/code&gt;, I put all countries existed for the given period in my node list (node.csv).&lt;/p&gt;
+&lt;p&gt;Additionally, I’ll color the nodes (countries) using their geographical location. For the color of the nodes, I’ll use COW country codes, which are included in ‘vtx1987.csv’ below.&lt;/p&gt;
+&lt;p&gt;You can download these toy datasets from my &lt;a href=&#34;https://github.com/bomibonnie/website-hugo/tree/master/content/post&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;riv &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&amp;quot;)
+vtx &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&amp;quot;)
+vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-look-at-the-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 3: Look at the data&lt;/h3&gt;
+&lt;p&gt;Let’s look at the data we loaded in the previous step. The object ‘riv’ is a list of rivalries (edge list). As shown in the table below, ‘riv’ has four columns: year, stateabb1, stateabb2, and no. Since rivalries are not directed (if Country A is Country B’s rival, then Country B is Country A’s rival as well), the order of stateabb1 and stateabb2 is not important. I’ll use ‘no’ variable to differentiate the four time points from one another.&lt;/p&gt;
+&lt;p&gt;Because our edge list is made using stateabb (i.e., AAB, AFG, ALB…), our node list must be a list of stateabb.&lt;/p&gt;
+&lt;p&gt;In terms of the color of nodes, I need more info about the nodes (countries). So, I use the variables in ‘vtx87’. The nodes will be matched using the ‘stateabb’ variable.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(riv)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   year stateabb1 stateabb2 no
+## 1 1987       AFG       PAK  1
+## 2 1992       AFG       PAK  2
+## 3 1997       AFG       PAK  3
+## 4 2002       AFG       PAK  4
+## 5 1997       AFG       TAJ  3
+## 6 1997       AFG       UZB  3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(vtx)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   stateabb
+## 1      AAB
+## 2      AFG
+## 3      ALB
+## 4      ALG
+## 5      AND
+## 6      ANG&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(vtx87)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   stateabb ccode        cinc
+## 1      AAB    58 0.000002740
+## 2      AFG   700 0.001255717
+## 3      ALB   339 0.000529850
+## 4      ALG   615 0.004066098
+## 5      AND   232 0.000000000
+## 6      ANG   540 0.001150265&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-4-make-a-list-of-networks&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 4: Make a list of networks&lt;/h3&gt;
+&lt;p&gt;I use ‘for loop’ to make a list of rivalry networks for four time points. Briefly, I make an empty list (rivlist) first and put each rivalry network for each time point in the list using the for loop.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;More details&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The object, ‘nv’, is a numeric value, which shows the total number of countries (the value is 204 in my toy dataset).&lt;/p&gt;
+&lt;p&gt;Let’s look at the for loop chunk below. This loop will be repeated four times (from 1 to 4). I use ‘no’ for the time points. When i is equal to 1, all rivalries in 1987 are selected (rivi) and two columns from rivi (stateabb1 and stateabb2) would be kept (rivii).&lt;/p&gt;
+&lt;p&gt;Using the nv (204L), I make an empty network (command: network.initialize). Since there is no direction in rivalries, the option ‘directed’ is FALSE. If your networks of interest are directed (i.e., A thinks B is his/her friend but B doesn’t think like that), then change this option to TRUE. For the network with 204 vertices, I add the vertex names using the command, ‘network.vertex.names’. Now the vertices in the network have their names (stateabb) but still there is no information about ties. The information of ties is loaded from ‘rivii’. The next line is optional. I add info about time points as a vertex attribute (order) to the network. As mentioned above, this sequence is repeated for four time points.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nv &amp;lt;- nrow(vtx)
+
+rivlist &amp;lt;- list()
+
+for(i in 1:4){
+  rivi &amp;lt;- subset(riv, riv$no == i)
+  rivii&amp;lt;-cbind(rivi$stateabb1, rivi$stateabb2)
+  netyr &amp;lt;- network.initialize(nv, directed=FALSE)
+  network.vertex.names(x=netyr) &amp;lt;- vtx$stateabb
+  netyr[rivii] &amp;lt;- 1
+  set.vertex.attribute(x=netyr,attrname=&amp;quot;order&amp;quot;,val=rep(i,nv))
+  rivlist[[i]] &amp;lt;- netyr
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Set vertex attribute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As shown in the previous step, we can use ‘set.vertex.attribute’ to add vertex attributes to the network. Following commands are for the color of nodes.&lt;/p&gt;
+&lt;p&gt;From ‘vtx87’, I add COW country codes for the nodes in the network. This variable is for the color of nodes: red for Americas, orange for Europe, yellow for Africa, green for Middle East, and blue for Asia and Oceania. If you want to color the nodes, you’d better to choose one of the variables which rarely varies over time such as geographical location for countries and gender for individuals. Although &lt;code&gt;ndtv&lt;/code&gt; allows us to look at changes in networks such as tie formation and dissolution, it doesn’t allow changes in nodal attributes. For instance, if Country A moved to democracy from non-democracy in 1992 (time point 2), its change cannot be reflected in the network animation.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
+
+cols1&amp;lt;-vector()
+for(i in 1:204){
+  ifelse(rivlist[[1]]$val[[i]]$ccode&amp;lt;200, cols1[i] &amp;lt;- &amp;quot;red&amp;quot;, 
+         ifelse((rivlist[[1]]$val[[i]]$ccode&amp;gt;=200)&amp;amp;(rivlist[[1]]$val[[i]]$ccode&amp;lt;400), cols1[i]&amp;lt;-&amp;quot;orange&amp;quot;,
+                ifelse((rivlist[[1]]$val[[i]]$ccode&amp;gt;=400)&amp;amp;(rivlist[[1]]$val[[i]]$ccode&amp;lt;630), cols1[i]&amp;lt;-&amp;quot;yellow&amp;quot;,
+                       ifelse((rivlist[[1]]$val[[i]]$ccode&amp;gt;=630)&amp;amp;(rivlist[[1]]$val[[i]]$ccode&amp;lt;700),cols1[i]&amp;lt;-&amp;quot;green&amp;quot;, cols1[i]&amp;lt;-&amp;quot;blue&amp;quot;))))
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;** You can find more commands for data management in R &lt;a href=&#34;https://github.com/bomibonnie/R-Workshops&#34;&gt;here&lt;/a&gt; from my github.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make a plot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s look at the rivalry network in 1987 (time point 1). I use the vector of colors (for geographical location) for this plot.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(rivlist[[1]], 
+     vertex.col=cols1, 
+     edge.col=&amp;quot;grey50&amp;quot;,
+     xpd=T)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://bomiklee.com/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-5-make-gifs&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 5: Make GIFs!&lt;/h3&gt;
+&lt;p&gt;This is the last step! Make a networkDynamic object using the command ‘networkDynamic’. Before we render an animation, we need one more code here. By using the ‘compute.animation’ command, we can set intervals, animation layout, etc.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)
+rivgif &amp;lt;- compute.animation(rivdyn, 
+                            animation.mode = &amp;quot;kamadakawai&amp;quot;,
+                            verbose = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is the last command. Use the ‘render.d3movie’ command to make a network animation! I add the color vector for this gif!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render.d3movie(rivgif,
+               displaylables=FALSE, 
+               vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;More information about &lt;code&gt;ndtv&lt;/code&gt; can be found &lt;a href=&#34;https://rdrr.io/cran/ndtv/f/inst/doc/ndtv.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    You can look at the network gif by clicking &lt;strong&gt;Video&lt;/strong&gt; button above.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

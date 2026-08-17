@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Course Outline | Bomi K. Lee</title>
+    <link>https://bomiklee.com/courses/analyzing-political-data/</link>
+      <atom:link href="https://bomiklee.com/courses/analyzing-political-data/index.xml" rel="self" type="application/rss+xml" />
+    <description>Course Outline</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://bomiklee.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Course Outline</title>
+      <link>https://bomiklee.com/courses/analyzing-political-data/</link>
+    </image>
+    
+    <item>
+      <title>Summary Statistics</title>
+      <link>https://bomiklee.com/courses/analyzing-political-data/summary-statistics/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0100</pubDate>
+      <guid>https://bomiklee.com/courses/analyzing-political-data/summary-statistics/</guid>
+      <description>&lt;p&gt;In this page, I&amp;rsquo;ll share Stata commands for summary statistics. The dataset I use here is Militarized Interstate Disputes (v4.3) dataset from the Correlates of War Project. You can download the dataset 
+&lt;a href=&#34;https://correlatesofwar.org/data-sets/MIDs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;opening-data-with-use-command&#34;&gt;Opening data with &lt;code&gt;use&lt;/code&gt; command&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;use &amp;quot;MIDA 4.3.dta&amp;quot;, clear
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[,clear] is telling Stata to clear any other data that you have opened in Stata.&lt;/p&gt;
+&lt;p&gt;When you open an excel file (.csv or .xlsx), use &amp;lsquo;import delimited&amp;rsquo; instead.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;import delimited &amp;quot;MIDA 4.3.csv&amp;quot;, clear 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;looking-at-variables&#34;&gt;Looking at variables&lt;/h3&gt;
+&lt;p&gt;What variables do we have in the example dataset?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;describe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When you type &amp;lsquo;describe&amp;rsquo;, You can see the names and labels of all variables in the dataset.&lt;/p&gt;
+&lt;h3 id=&#34;measures-of-central-tendancy-mean-median-mode&#34;&gt;Measures of central tendancy: mean, median, mode&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s look at &amp;lsquo;outcome&amp;rsquo; variable in the MIDA dataset. &amp;lsquo;outcome&amp;rsquo; shows the outcome of dispute like below.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Victory for side A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Victory for side B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Yield by side A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Yield by side B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Stalemate&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;Compromise&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Released&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;Unclear&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;Joins ongoing war&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-9&lt;/td&gt;
+&lt;td&gt;Missing&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Since the value doesn&amp;rsquo;t have specific meaning (nominal), mean and median are not meaningful. Let&amp;rsquo;s find the mode of this variable. &amp;lsquo;tabulate&amp;rsquo; or simply &amp;lsquo;tab&amp;rsquo; is useful to figure out the mode.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tabulate outcome
+
+tab outcome, missing
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can see that 5 (Stalemate) is the mode of this variable.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s fidn the mean and median of &amp;lsquo;MaxDur&amp;rsquo; variable. &amp;lsquo;MaxDur&amp;rsquo; is the maximum duration of dispute. First, you can use &amp;lsquo;codebook&amp;rsquo; command. It will show you the range, number of unique values, number of missing values, mean, standard deviation, and percentiles. You can see that there is no missing values in this variable!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;codebook maxdur
+
+summarize maxdur
+sum maxdur, detail
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Second, you can use summarize or simply sum to look at the number of observations, mean, standard deviation, minimum and maximum values. If you add &amp;lsquo;, detail&amp;rsquo; or &amp;lsquo;, d&amp;rsquo;, then you can see more detailed information such as percentiles, variance, skewness, and kurtosis.&lt;/p&gt;
+&lt;p&gt;The mean of the maximum duration of disputes is 161.72 and the median is 41.&lt;/p&gt;
+&lt;p&gt;If you have missing values such as -9 in the previous example, you might want to exclude those values. Then, use &amp;lsquo;if&amp;rsquo; option.&lt;/p&gt;
+&lt;h3 id=&#34;visualization&#34;&gt;Visualization&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s make histograms and box plots! Histograms are helpful to look at the distribution of variables. The command is &amp;lsquo;histogram&amp;rsquo; or &amp;lsquo;hist&amp;rsquo;. You can add more options to make a prettier histogram.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;histogram maxdur
+
+hist maxdur, percent bin(15) xtitle(&amp;quot;Maximum Duration of Dispute&amp;quot;)
+hist maxdur, percent width(10) xtitle(&amp;quot;Maximum Duration of Dispute&amp;quot;)
+hist maxdur, freq xtitle(&amp;quot;Maximum Duration of Dispute&amp;quot;)
+
+graph box maxdur
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can change the number and width of bins (bin and width respectively). The default setting will show you the density. You can change that by adding &amp;lsquo;frequency&amp;rsquo; or &amp;lsquo;percent&amp;rsquo; as an option to the command.&lt;/p&gt;
+&lt;p&gt;You can draw a box plot using the command, &amp;lsquo;graph box&amp;rsquo;. Since this variable is right-skewed, we can see many outside values above the box (dots above the upper adjacent line).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bivariate Statistics</title>
+      <link>https://bomiklee.com/courses/analyzing-political-data/bivariate-statistics/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0100</pubDate>
+      <guid>https://bomiklee.com/courses/analyzing-political-data/bivariate-statistics/</guid>
+      <description>&lt;p&gt;Here are Stata commands for bivariate statistics. I use the 2018 CCES Common Content Dataset for this tutorial. You can download the data from the CCES 
+&lt;a href=&#34;https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910/DVN/ZSBZ7K&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dataverse&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s load the data first.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;use &amp;quot;cces18_common_vv.dta&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We are going to use &amp;ldquo;CC18_426_3&amp;rdquo; as our DV. &amp;ldquo;CC18_426_3&amp;rdquo; is based on the question that &amp;ldquo;State legislatures must make choices when making spending decisions on important state programs. How would you like your legislature to spend money on education?&amp;rdquo; Of course, this variable is ordinal, but let&amp;rsquo;s assume it is continuous.&lt;/p&gt;
+&lt;p&gt;My research question for this practice is this: Is there any gender difference in support for education spending?&lt;/p&gt;
+&lt;p&gt;Look at our DV.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab CC18_426_3, m
+tab CC18_426_3, nolab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the original variable, &amp;ldquo;Greatly increase&amp;rdquo; is labeled 1 and &amp;ldquo;Greatly decrease&amp;rdquo; is labeled 5. I&amp;rsquo;ll change the value for &amp;ldquo;Greatly increase&amp;rdquo; to 5 and for &amp;ldquo;Greatly decrease&amp;rdquo; to 1. To keep the original variable, I make a new variable called &amp;lsquo;educ_spending&amp;rsquo; and recode this new variable.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;gen educ_spending = CC18_426_3 
+recode educ_spending(1=5)(2=4)(4=2)(5=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;difference-of-means-test&#34;&gt;Difference of means test&lt;/h3&gt;
+&lt;p&gt;You can use &lt;code&gt;ttest&lt;/code&gt; command to conduct the difference of means test.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;ttest educ_spending, by(gender)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Look at the p-value below the alternative hypothesis. Do we reject the null hypothesis? How can we know that?&lt;/p&gt;
+&lt;h3 id=&#34;anova&#34;&gt;ANOVA&lt;/h3&gt;
+&lt;p&gt;For the ANOVA test, we are going to focus on four race groups: White, Black, Hispanic, and Asian. Let&amp;rsquo;s look at the variable, race.&lt;/p&gt;
+&lt;p&gt;Since we don&amp;rsquo;t include other categories (Native American, Mixed, Other, and Middle Eastern) in our analysis, I add &amp;lsquo;if&amp;rsquo; options to the code below.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab race
+
+anova educ_spending race if (educ_spending ~=.) &amp;amp; (race&amp;lt;5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Do we reject the null that the means are the same across the four racial groups?&lt;/p&gt;
+&lt;h3 id=&#34;chi2-test&#34;&gt;$\chi^2$ test&lt;/h3&gt;
+&lt;p&gt;Answer the questions below by using the $\chi^2$ test.&lt;/p&gt;
+&lt;p&gt;Question 1: Gender and Party ID are independent?
+Question 2: Education and Family Income are independent?&lt;/p&gt;
+&lt;p&gt;Step 1. Find relevant variables in the dataset.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;codebook gender
+codebook pid3
+
+codebook educ
+codebook faminc_new
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Step 2. Look at the variables and recode them if necessary&lt;/p&gt;
+&lt;p&gt;Check missing values, labels, etc.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab faminc_new, m
+tab faminc_new, nolab
+
+gen pid3_new = pid3
+recode pid3_new(4=.)(5=.)
+recode pid3_new(4/5=.)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Step 3. Conduct the $\chi^2$ test&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab gender pid3_new, chi2
+
+tab educ faminc_new if faminc_new&amp;lt;17, chi2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Are they independent? How do we know that?&lt;/p&gt;
+&lt;h3 id=&#34;strength-of-association&#34;&gt;Strength of association&lt;/h3&gt;
+&lt;p&gt;One step further. Let&amp;rsquo;s look at the strength of association using Kendall&amp;rsquo;s Tau-b and Cramer&amp;rsquo;s V.&lt;/p&gt;
+&lt;h4 id=&#34;kendalls-tau-b&#34;&gt;Kendall&amp;rsquo;s Tau-b&lt;/h4&gt;
+&lt;p&gt;If your variables of interest are oridnal, you can use Kendall&amp;rsquo;s Tau-b for the strength of association, which bounded between -1 and 1.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab educ faminc_new if faminc_new&amp;lt;17, taub
+ktau educ faminc_new if faminc_new&amp;lt;17, stats(taub)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;cramers-v&#34;&gt;Cramer&amp;rsquo;s V&lt;/h4&gt;
+&lt;p&gt;If your variables of interest are nominal, then you can use Cramer&amp;rsquo;s V for the strength of association, which is calculated using the equation, $\Large v= \sqrt{\frac{\chi^2}{nm}}$. Cramer&amp;rsquo;s V is bounded between 0 and 1.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab gender pid3_new, V
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Regressions</title>
+      <link>https://bomiklee.com/courses/analyzing-political-data/regressions/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0100</pubDate>
+      <guid>https://bomiklee.com/courses/analyzing-political-data/regressions/</guid>
+      <description>&lt;p&gt;For this correlation and regression practice, I use a county-level voter turnout dataset. You can get this dataset by 
+&lt;a href=&#34;mailto:bomi-lee-1@uiowa.edu&#34;&gt;request&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Load the dataset first.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;use &amp;quot;county_turnout.dta&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The research question for this tutorial is: Are counties with more millennials likely to have lower turnout?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s make a scatter plot.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;scatter perc_turnout perc_mille
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Optional:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;make it prettier using &lt;code&gt;grstyle&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;add the best fitted line to the scatter plot.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;grstyle init
+grstyle set plain
+
+scatter perc_turnout perc_mille
+
+twoway (scatter perc_turnout perc_mille)(lfit perc_turnout perc_mille)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Is there a linear relationship?&lt;/p&gt;
+&lt;h3 id=&#34;correlation&#34;&gt;Correlation&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the correlation between thses two variables.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;pwcorr perc_turnout perc_mille
+
+pwcorr perc_turnout perc_mille, sig
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Interpret the result. The linear relationship between voter turnout and the percentage of millennials is statistically significant?&lt;/p&gt;
+&lt;h3 id=&#34;regressions&#34;&gt;Regressions&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s start with a simple regression. Our DV is voter turnout and our IV is the percentage of millennials.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;reg perc_turnout perc_mille
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What happens if we add a control variable, percent_college to the regression model? The effect of the percentage of millennials is still significant?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;reg perc_turnout perc_mille perc_college
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;visualization-using-margins&#34;&gt;Visualization using &lt;code&gt;margins&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s visualize the predicted voter turnout. Look at our IV (perc_mille) and choose the range for the plot. I choose the range from 10 to 40 with 5 percent gap.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;sum perc_mille, d
+margins, at(perc_mille=(10(5)40)) atmeans
+
+marginsplot, xtitle(&amp;quot;Percentage of Millennials&amp;quot;) ytitle(&amp;quot;Voter Turnout&amp;quot;) ///
+	ti(Effect of Millennials on Voter Turnout) 
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

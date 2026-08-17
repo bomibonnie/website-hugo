@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bomi K. Lee</title>
+    <link>https://bomiklee.com/</link>
+      <atom:link href="https://bomiklee.com/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bomi K. Lee</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 14 Nov 2020 10:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://bomiklee.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Bomi K. Lee</title>
+      <link>https://bomiklee.com/</link>
+    </image>
+    
+    <item>
+      <title>Summary Statistics</title>
+      <link>https://bomiklee.com/courses/analyzing-political-data/summary-statistics/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0100</pubDate>
+      <guid>https://bomiklee.com/courses/analyzing-political-data/summary-statistics/</guid>
+      <description>&lt;p&gt;In this page, I&amp;rsquo;ll share Stata commands for summary statistics. The dataset I use here is Militarized Interstate Disputes (v4.3) dataset from the Correlates of War Project. You can download the dataset 
+&lt;a href=&#34;https://correlatesofwar.org/data-sets/MIDs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;opening-data-with-use-command&#34;&gt;Opening data with &lt;code&gt;use&lt;/code&gt; command&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;use &amp;quot;MIDA 4.3.dta&amp;quot;, clear
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[,clear] is telling Stata to clear any other data that you have opened in Stata.&lt;/p&gt;
+&lt;p&gt;When you open an excel file (.csv or .xlsx), use &amp;lsquo;import delimited&amp;rsquo; instead.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;import delimited &amp;quot;MIDA 4.3.csv&amp;quot;, clear 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;looking-at-variables&#34;&gt;Looking at variables&lt;/h3&gt;
+&lt;p&gt;What variables do we have in the example dataset?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;describe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When you type &amp;lsquo;describe&amp;rsquo;, You can see the names and labels of all variables in the dataset.&lt;/p&gt;
+&lt;h3 id=&#34;measures-of-central-tendancy-mean-median-mode&#34;&gt;Measures of central tendancy: mean, median, mode&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s look at &amp;lsquo;outcome&amp;rsquo; variable in the MIDA dataset. &amp;lsquo;outcome&amp;rsquo; shows the outcome of dispute like below.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Victory for side A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Victory for side B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Yield by side A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Yield by side B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Stalemate&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;Compromise&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Released&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;Unclear&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;Joins ongoing war&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-9&lt;/td&gt;
+&lt;td&gt;Missing&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Since the value doesn&amp;rsquo;t have specific meaning (nominal), mean and median are not meaningful. Let&amp;rsquo;s find the mode of this variable. &amp;lsquo;tabulate&amp;rsquo; or simply &amp;lsquo;tab&amp;rsquo; is useful to figure out the mode.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tabulate outcome
+
+tab outcome, missing
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can see that 5 (Stalemate) is the mode of this variable.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s fidn the mean and median of &amp;lsquo;MaxDur&amp;rsquo; variable. &amp;lsquo;MaxDur&amp;rsquo; is the maximum duration of dispute. First, you can use &amp;lsquo;codebook&amp;rsquo; command. It will show you the range, number of unique values, number of missing values, mean, standard deviation, and percentiles. You can see that there is no missing values in this variable!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;codebook maxdur
+
+summarize maxdur
+sum maxdur, detail
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Second, you can use summarize or simply sum to look at the number of observations, mean, standard deviation, minimum and maximum values. If you add &amp;lsquo;, detail&amp;rsquo; or &amp;lsquo;, d&amp;rsquo;, then you can see more detailed information such as percentiles, variance, skewness, and kurtosis.&lt;/p&gt;
+&lt;p&gt;The mean of the maximum duration of disputes is 161.72 and the median is 41.&lt;/p&gt;
+&lt;p&gt;If you have missing values such as -9 in the previous example, you might want to exclude those values. Then, use &amp;lsquo;if&amp;rsquo; option.&lt;/p&gt;
+&lt;h3 id=&#34;visualization&#34;&gt;Visualization&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s make histograms and box plots! Histograms are helpful to look at the distribution of variables. The command is &amp;lsquo;histogram&amp;rsquo; or &amp;lsquo;hist&amp;rsquo;. You can add more options to make a prettier histogram.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;histogram maxdur
+
+hist maxdur, percent bin(15) xtitle(&amp;quot;Maximum Duration of Dispute&amp;quot;)
+hist maxdur, percent width(10) xtitle(&amp;quot;Maximum Duration of Dispute&amp;quot;)
+hist maxdur, freq xtitle(&amp;quot;Maximum Duration of Dispute&amp;quot;)
+
+graph box maxdur
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can change the number and width of bins (bin and width respectively). The default setting will show you the density. You can change that by adding &amp;lsquo;frequency&amp;rsquo; or &amp;lsquo;percent&amp;rsquo; as an option to the command.&lt;/p&gt;
+&lt;p&gt;You can draw a box plot using the command, &amp;lsquo;graph box&amp;rsquo;. Since this variable is right-skewed, we can see many outside values above the box (dots above the upper adjacent line).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bivariate Statistics</title>
+      <link>https://bomiklee.com/courses/analyzing-political-data/bivariate-statistics/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0100</pubDate>
+      <guid>https://bomiklee.com/courses/analyzing-political-data/bivariate-statistics/</guid>
+      <description>&lt;p&gt;Here are Stata commands for bivariate statistics. I use the 2018 CCES Common Content Dataset for this tutorial. You can download the data from the CCES 
+&lt;a href=&#34;https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910/DVN/ZSBZ7K&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dataverse&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s load the data first.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;use &amp;quot;cces18_common_vv.dta&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We are going to use &amp;ldquo;CC18_426_3&amp;rdquo; as our DV. &amp;ldquo;CC18_426_3&amp;rdquo; is based on the question that &amp;ldquo;State legislatures must make choices when making spending decisions on important state programs. How would you like your legislature to spend money on education?&amp;rdquo; Of course, this variable is ordinal, but let&amp;rsquo;s assume it is continuous.&lt;/p&gt;
+&lt;p&gt;My research question for this practice is this: Is there any gender difference in support for education spending?&lt;/p&gt;
+&lt;p&gt;Look at our DV.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab CC18_426_3, m
+tab CC18_426_3, nolab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the original variable, &amp;ldquo;Greatly increase&amp;rdquo; is labeled 1 and &amp;ldquo;Greatly decrease&amp;rdquo; is labeled 5. I&amp;rsquo;ll change the value for &amp;ldquo;Greatly increase&amp;rdquo; to 5 and for &amp;ldquo;Greatly decrease&amp;rdquo; to 1. To keep the original variable, I make a new variable called &amp;lsquo;educ_spending&amp;rsquo; and recode this new variable.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;gen educ_spending = CC18_426_3 
+recode educ_spending(1=5)(2=4)(4=2)(5=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;difference-of-means-test&#34;&gt;Difference of means test&lt;/h3&gt;
+&lt;p&gt;You can use &lt;code&gt;ttest&lt;/code&gt; command to conduct the difference of means test.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;ttest educ_spending, by(gender)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Look at the p-value below the alternative hypothesis. Do we reject the null hypothesis? How can we know that?&lt;/p&gt;
+&lt;h3 id=&#34;anova&#34;&gt;ANOVA&lt;/h3&gt;
+&lt;p&gt;For the ANOVA test, we are going to focus on four race groups: White, Black, Hispanic, and Asian. Let&amp;rsquo;s look at the variable, race.&lt;/p&gt;
+&lt;p&gt;Since we don&amp;rsquo;t include other categories (Native American, Mixed, Other, and Middle Eastern) in our analysis, I add &amp;lsquo;if&amp;rsquo; options to the code below.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab race
+
+anova educ_spending race if (educ_spending ~=.) &amp;amp; (race&amp;lt;5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Do we reject the null that the means are the same across the four racial groups?&lt;/p&gt;
+&lt;h3 id=&#34;chi2-test&#34;&gt;$\chi^2$ test&lt;/h3&gt;
+&lt;p&gt;Answer the questions below by using the $\chi^2$ test.&lt;/p&gt;
+&lt;p&gt;Question 1: Gender and Party ID are independent?
+Question 2: Education and Family Income are independent?&lt;/p&gt;
+&lt;p&gt;Step 1. Find relevant variables in the dataset.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;codebook gender
+codebook pid3
+
+codebook educ
+codebook faminc_new
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Step 2. Look at the variables and recode them if necessary&lt;/p&gt;
+&lt;p&gt;Check missing values, labels, etc.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab faminc_new, m
+tab faminc_new, nolab
+
+gen pid3_new = pid3
+recode pid3_new(4=.)(5=.)
+recode pid3_new(4/5=.)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Step 3. Conduct the $\chi^2$ test&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab gender pid3_new, chi2
+
+tab educ faminc_new if faminc_new&amp;lt;17, chi2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Are they independent? How do we know that?&lt;/p&gt;
+&lt;h3 id=&#34;strength-of-association&#34;&gt;Strength of association&lt;/h3&gt;
+&lt;p&gt;One step further. Let&amp;rsquo;s look at the strength of association using Kendall&amp;rsquo;s Tau-b and Cramer&amp;rsquo;s V.&lt;/p&gt;
+&lt;h4 id=&#34;kendalls-tau-b&#34;&gt;Kendall&amp;rsquo;s Tau-b&lt;/h4&gt;
+&lt;p&gt;If your variables of interest are oridnal, you can use Kendall&amp;rsquo;s Tau-b for the strength of association, which bounded between -1 and 1.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab educ faminc_new if faminc_new&amp;lt;17, taub
+ktau educ faminc_new if faminc_new&amp;lt;17, stats(taub)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;cramers-v&#34;&gt;Cramer&amp;rsquo;s V&lt;/h4&gt;
+&lt;p&gt;If your variables of interest are nominal, then you can use Cramer&amp;rsquo;s V for the strength of association, which is calculated using the equation, $\Large v= \sqrt{\frac{\chi^2}{nm}}$. Cramer&amp;rsquo;s V is bounded between 0 and 1.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;tab gender pid3_new, V
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Regressions</title>
+      <link>https://bomiklee.com/courses/analyzing-political-data/regressions/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0100</pubDate>
+      <guid>https://bomiklee.com/courses/analyzing-political-data/regressions/</guid>
+      <description>&lt;p&gt;For this correlation and regression practice, I use a county-level voter turnout dataset. You can get this dataset by 
+&lt;a href=&#34;mailto:bomi-lee-1@uiowa.edu&#34;&gt;request&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Load the dataset first.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;use &amp;quot;county_turnout.dta&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The research question for this tutorial is: Are counties with more millennials likely to have lower turnout?&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s make a scatter plot.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;scatter perc_turnout perc_mille
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Optional:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;make it prettier using &lt;code&gt;grstyle&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;add the best fitted line to the scatter plot.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;grstyle init
+grstyle set plain
+
+scatter perc_turnout perc_mille
+
+twoway (scatter perc_turnout perc_mille)(lfit perc_turnout perc_mille)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Is there a linear relationship?&lt;/p&gt;
+&lt;h3 id=&#34;correlation&#34;&gt;Correlation&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the correlation between thses two variables.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;pwcorr perc_turnout perc_mille
+
+pwcorr perc_turnout perc_mille, sig
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Interpret the result. The linear relationship between voter turnout and the percentage of millennials is statistically significant?&lt;/p&gt;
+&lt;h3 id=&#34;regressions&#34;&gt;Regressions&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s start with a simple regression. Our DV is voter turnout and our IV is the percentage of millennials.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;reg perc_turnout perc_mille
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What happens if we add a control variable, percent_college to the regression model? The effect of the percentage of millennials is still significant?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;reg perc_turnout perc_mille perc_college
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;visualization-using-margins&#34;&gt;Visualization using &lt;code&gt;margins&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s visualize the predicted voter turnout. Look at our IV (perc_mille) and choose the range for the plot. I choose the range from 10 to 40 with 5 percent gap.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;sum perc_mille, d
+margins, at(perc_mille=(10(5)40)) atmeans
+
+marginsplot, xtitle(&amp;quot;Percentage of Millennials&amp;quot;) ytitle(&amp;quot;Voter Turnout&amp;quot;) ///
+	ti(Effect of Millennials on Voter Turnout) 
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How Natural Disasters Influence Interstate Rivalry De-escalation</title>
+      <link>https://bomiklee.com/talk/peacescience_2020/</link>
+      <pubDate>Sat, 14 Nov 2020 10:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/talk/peacescience_2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Climate Bones of Contention: How Climate Change Influences Territorial, Maritime, and River Interstate Conflicts</title>
+      <link>https://bomiklee.com/publication/climate_bones_of_contention/</link>
+      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/publication/climate_bones_of_contention/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Beyond a Dyadic Approach-Centrality, Triangles, and Rivalry Duration</title>
+      <link>https://bomiklee.com/talk/apsa_2020/</link>
+      <pubDate>Thu, 10 Sep 2020 12:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/talk/apsa_2020/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    You can look over my presentation slides by clicking &lt;strong&gt;pdf&lt;/strong&gt; button above.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multiple Rivals and Public Opinion</title>
+      <link>https://bomiklee.com/project/multiple_rivals/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/project/multiple_rivals/</guid>
+      <description>&lt;p&gt;What rival relationship matters in domestic politics? Some scholars show that
+leaders who cooperate with a rival country are more likely to be removed (e.g., Colaresi 2004). Although they examine the effects of policy choices (conflict v. cooperation) and policy outcomes (success v. failure) on leadership tenure in the context of rivalry, they rarely discuss the countries facing multiple rival relationships. When a country has multiple rivals, the effects of conflictual/cooperative policies and their outcomes can vary depending on the characteristics of rival relationships. This article focuses on how the public approves of its leader’s cooperative or conflictual foreign policies toward a rival country depending on the characteristics of rivals. For analysis, online survey experiments in Japan and South Korea are employed.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Making Network Animations Using NDTV package</title>
+      <link>https://bomiklee.com/post/making-network-animations-using-ndtv-package/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/post/making-network-animations-using-ndtv-package/</guid>
+      <description>
+
+
+&lt;p&gt;The following commands are for making a network animation using &lt;code&gt;statnet&lt;/code&gt; and &lt;code&gt;ndtv&lt;/code&gt; in R.&lt;/p&gt;
+&lt;div id=&#34;step-1-load-packages&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 1: Load packages&lt;/h3&gt;
+&lt;p&gt;I’ll use &lt;code&gt;statnet&lt;/code&gt;, &lt;code&gt;ndtv&lt;/code&gt;, and &lt;code&gt;rio&lt;/code&gt; packages to make a network gif. &lt;code&gt;statnet&lt;/code&gt; and &lt;code&gt;ndtv&lt;/code&gt; packages are necessary but you can use other packages instead of &lt;code&gt;rio&lt;/code&gt; for loading data. I prefer &lt;code&gt;rio&lt;/code&gt; because the command is simple. What we need to do is type ‘import’ as shown in Step 2.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(statnet)
+library(ndtv)
+library(rio)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-load-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 2: Load data&lt;/h3&gt;
+&lt;p&gt;I’ll make a network animation for the formation and dissolution of interstate rivalry from 1987 to 2002 with 5-year intervals (four time points). So, two pieces of information are necessary: 1) a list of rivalries for the given time points (edge list), and 2) a list of countries (node list). The current version of &lt;code&gt;ndtv&lt;/code&gt; package doesn’t allow varying numbers of vertices, which means the number of vertices must be the same for all time points. Indeed, some countries newly appeared while others disappeared during the given time period. However, because of the limitation in &lt;code&gt;ndtv&lt;/code&gt;, I put all countries existed for the given period in my node list (node.csv).&lt;/p&gt;
+&lt;p&gt;Additionally, I’ll color the nodes (countries) using their geographical location. For the color of the nodes, I’ll use COW country codes, which are included in ‘vtx1987.csv’ below.&lt;/p&gt;
+&lt;p&gt;You can download these toy datasets from my &lt;a href=&#34;https://github.com/bomibonnie/website-hugo/tree/master/content/post&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;riv &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&amp;quot;)
+vtx &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&amp;quot;)
+vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-look-at-the-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 3: Look at the data&lt;/h3&gt;
+&lt;p&gt;Let’s look at the data we loaded in the previous step. The object ‘riv’ is a list of rivalries (edge list). As shown in the table below, ‘riv’ has four columns: year, stateabb1, stateabb2, and no. Since rivalries are not directed (if Country A is Country B’s rival, then Country B is Country A’s rival as well), the order of stateabb1 and stateabb2 is not important. I’ll use ‘no’ variable to differentiate the four time points from one another.&lt;/p&gt;
+&lt;p&gt;Because our edge list is made using stateabb (i.e., AAB, AFG, ALB…), our node list must be a list of stateabb.&lt;/p&gt;
+&lt;p&gt;In terms of the color of nodes, I need more info about the nodes (countries). So, I use the variables in ‘vtx87’. The nodes will be matched using the ‘stateabb’ variable.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(riv)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   year stateabb1 stateabb2 no
+## 1 1987       AFG       PAK  1
+## 2 1992       AFG       PAK  2
+## 3 1997       AFG       PAK  3
+## 4 2002       AFG       PAK  4
+## 5 1997       AFG       TAJ  3
+## 6 1997       AFG       UZB  3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(vtx)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   stateabb
+## 1      AAB
+## 2      AFG
+## 3      ALB
+## 4      ALG
+## 5      AND
+## 6      ANG&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(vtx87)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   stateabb ccode        cinc
+## 1      AAB    58 0.000002740
+## 2      AFG   700 0.001255717
+## 3      ALB   339 0.000529850
+## 4      ALG   615 0.004066098
+## 5      AND   232 0.000000000
+## 6      ANG   540 0.001150265&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-4-make-a-list-of-networks&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 4: Make a list of networks&lt;/h3&gt;
+&lt;p&gt;I use ‘for loop’ to make a list of rivalry networks for four time points. Briefly, I make an empty list (rivlist) first and put each rivalry network for each time point in the list using the for loop.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;More details&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The object, ‘nv’, is a numeric value, which shows the total number of countries (the value is 204 in my toy dataset).&lt;/p&gt;
+&lt;p&gt;Let’s look at the for loop chunk below. This loop will be repeated four times (from 1 to 4). I use ‘no’ for the time points. When i is equal to 1, all rivalries in 1987 are selected (rivi) and two columns from rivi (stateabb1 and stateabb2) would be kept (rivii).&lt;/p&gt;
+&lt;p&gt;Using the nv (204L), I make an empty network (command: network.initialize). Since there is no direction in rivalries, the option ‘directed’ is FALSE. If your networks of interest are directed (i.e., A thinks B is his/her friend but B doesn’t think like that), then change this option to TRUE. For the network with 204 vertices, I add the vertex names using the command, ‘network.vertex.names’. Now the vertices in the network have their names (stateabb) but still there is no information about ties. The information of ties is loaded from ‘rivii’. The next line is optional. I add info about time points as a vertex attribute (order) to the network. As mentioned above, this sequence is repeated for four time points.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nv &amp;lt;- nrow(vtx)
+
+rivlist &amp;lt;- list()
+
+for(i in 1:4){
+  rivi &amp;lt;- subset(riv, riv$no == i)
+  rivii&amp;lt;-cbind(rivi$stateabb1, rivi$stateabb2)
+  netyr &amp;lt;- network.initialize(nv, directed=FALSE)
+  network.vertex.names(x=netyr) &amp;lt;- vtx$stateabb
+  netyr[rivii] &amp;lt;- 1
+  set.vertex.attribute(x=netyr,attrname=&amp;quot;order&amp;quot;,val=rep(i,nv))
+  rivlist[[i]] &amp;lt;- netyr
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Set vertex attribute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As shown in the previous step, we can use ‘set.vertex.attribute’ to add vertex attributes to the network. Following commands are for the color of nodes.&lt;/p&gt;
+&lt;p&gt;From ‘vtx87’, I add COW country codes for the nodes in the network. This variable is for the color of nodes: red for Americas, orange for Europe, yellow for Africa, green for Middle East, and blue for Asia and Oceania. If you want to color the nodes, you’d better to choose one of the variables which rarely varies over time such as geographical location for countries and gender for individuals. Although &lt;code&gt;ndtv&lt;/code&gt; allows us to look at changes in networks such as tie formation and dissolution, it doesn’t allow changes in nodal attributes. For instance, if Country A moved to democracy from non-democracy in 1992 (time point 2), its change cannot be reflected in the network animation.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
+
+cols1&amp;lt;-vector()
+for(i in 1:204){
+  ifelse(rivlist[[1]]$val[[i]]$ccode&amp;lt;200, cols1[i] &amp;lt;- &amp;quot;red&amp;quot;, 
+         ifelse((rivlist[[1]]$val[[i]]$ccode&amp;gt;=200)&amp;amp;(rivlist[[1]]$val[[i]]$ccode&amp;lt;400), cols1[i]&amp;lt;-&amp;quot;orange&amp;quot;,
+                ifelse((rivlist[[1]]$val[[i]]$ccode&amp;gt;=400)&amp;amp;(rivlist[[1]]$val[[i]]$ccode&amp;lt;630), cols1[i]&amp;lt;-&amp;quot;yellow&amp;quot;,
+                       ifelse((rivlist[[1]]$val[[i]]$ccode&amp;gt;=630)&amp;amp;(rivlist[[1]]$val[[i]]$ccode&amp;lt;700),cols1[i]&amp;lt;-&amp;quot;green&amp;quot;, cols1[i]&amp;lt;-&amp;quot;blue&amp;quot;))))
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;** You can find more commands for data management in R &lt;a href=&#34;https://github.com/bomibonnie/R-Workshops&#34;&gt;here&lt;/a&gt; from my github.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make a plot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s look at the rivalry network in 1987 (time point 1). I use the vector of colors (for geographical location) for this plot.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(rivlist[[1]], 
+     vertex.col=cols1, 
+     edge.col=&amp;quot;grey50&amp;quot;,
+     xpd=T)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://bomiklee.com/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-5-make-gifs&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 5: Make GIFs!&lt;/h3&gt;
+&lt;p&gt;This is the last step! Make a networkDynamic object using the command ‘networkDynamic’. Before we render an animation, we need one more code here. By using the ‘compute.animation’ command, we can set intervals, animation layout, etc.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)
+rivgif &amp;lt;- compute.animation(rivdyn, 
+                            animation.mode = &amp;quot;kamadakawai&amp;quot;,
+                            verbose = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is the last command. Use the ‘render.d3movie’ command to make a network animation! I add the color vector for this gif!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render.d3movie(rivgif,
+               displaylables=FALSE, 
+               vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;More information about &lt;code&gt;ndtv&lt;/code&gt; can be found &lt;a href=&#34;https://rdrr.io/cran/ndtv/f/inst/doc/ndtv.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    You can look at the network gif by clicking &lt;strong&gt;Video&lt;/strong&gt; button above.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Climate Bones of Contention</title>
+      <link>https://bomiklee.com/project/climate_change/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/project/climate_change/</guid>
+      <description>&lt;p&gt;With 
+&lt;a href=&#34;http://www.saramitchell.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sara McLaughlin Mitchell&lt;/a&gt; and 
+&lt;a href=&#34;https://www.codyjschmidt.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cody J. Schmidt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Abstract:&lt;/p&gt;
+&lt;p&gt;Conflict scholars examine the relationship between climate variability and conflict onset, with an emphasis on connections between precipitation and temperature shifts/shocks and intrastate violence. While empirical findings in this literature are mixed, we know less about how climate changes increase the risks for interstate conflicts between countries. This paper studies climate variability using the issue approach to world politics, connecting deviations and volatility in temperature and precipitation to the onset and militarization of diplomatic conflicts involving territorial, maritime, and river areas. We argue that climate variability increases interstate conflict risks by intensifying the salience and uncertainty of contested geopolitical areas. Analyses of issue claims in the Western Hemisphere and Europe (1901-2001) show that greater deviations and volatility in climate conditions increases risks for new diplomatic conflicts and militarization of ongoing issues and that chances for issue conflict are greatest for revisionist states (challengers). We confirm prior results that identify volatility in climate conditions as potentially dangerous steps to war.&lt;/p&gt;
+&lt;p&gt;This project was presented at the 2019 Peace Science Society Conference in Manhattan, KS.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Our latest paper is attached above (click PDF).
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Triangles, Major Powers, and Rivalry Duration</title>
+      <link>https://bomiklee.com/workingpapers/conference-paper/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/workingpapers/conference-paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Triangles in Networks</title>
+      <link>https://bomiklee.com/project/triangle/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/project/triangle/</guid>
+      <description>&lt;p&gt;Do triangular relationships influence international relations? When focusing on a rivalry in cross-networks of positive and negative relationships, one can be embedded in three types of triangles. Type Ⅰ consists of one rivalry and two positive relationships, Type Ⅱ of two rivalries and one positive relationship, and Type Ⅲ of three rivalries.  Based on Heider’s (1946) balance theory, Type Ⅱ triangle is balanced, thus, it is more likely to maintain while Type Ⅰ and Ⅲ are less likely because they are imbalanced.&lt;/p&gt;
+&lt;p&gt;First, In Type Ⅰ triangle, a rivalry is connected to a shared friend, thus, the friend of my enemy is my friend. When two rivals have a common friend, we can expect that the third party can be a potential mediator. For instance, when the tension between South Kore and Japan escalated over the disputed territory, the US tried to mediate their conflict because both South Korea and Japan are US’ alliance partners. Second, Type Ⅱ triangle can be more maintainable since the third party is one’s friend as well as the other’s enemy. In other words, the enemy of my enemy is my friend. Type Ⅱ is consistent with extended deterrence. When two friends have a common enemy, their friendship can be stronger and their rivalries can maintain longer. Lastly, in Type Ⅲ triangle, the enemy of my enemy is also my enemy. Under this situation, all countries have a common enemy, thus, if the severity levels are not equal, then one of the three rivalries can be weaker.&lt;/p&gt;
+&lt;p&gt;In this project, I examine whether and how various triangular relationships affect interstate relationships particularly rivalry duration. Network analysis is employed to capture the various triangles. Preliminary analyses of rivalry duration show that rivalries are more likely to terminate when they have a common friend and particularly, the friend is a major power.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    You can look at my slides by clicking &lt;strong&gt;PDF&lt;/strong&gt; above.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>https://bomiklee.com/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/slides/example/</guid>
+      <description>&lt;h1 id=&#34;triangles-major-powers-and-rivalry-duration&#34;&gt;Triangles, Major Powers, and Rivalry Duration&lt;/h1&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://bomibonnie.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bomi K. Lee&lt;/a&gt; University of Iowa&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/iowa2.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;rivalries-dyadic-interactions&#34;&gt;Rivalries: dyadic interactions&lt;/h2&gt;
+&lt;img data-src=&#34;https://bomiklee.com/img/rivdyads.png&#34;&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/iowa2.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;rivalries-in-triadic-relationships&#34;&gt;Rivalries in Triadic Relationships?&lt;/h2&gt;
+&lt;img data-src=&#34;https://bomiklee.com/img/triangle1.png&#34;&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
+One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+&lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+Three
+&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/iowa.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/University_of_Iowa_Logo.png&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://spectrum.chat/academic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

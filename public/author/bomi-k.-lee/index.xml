@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bomi K. Lee</title>
+    <link>https://bomiklee.com/author/bomi-k.-lee/</link>
+      <atom:link href="https://bomiklee.com/author/bomi-k.-lee/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bomi K. Lee</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 31 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://bomiklee.com/author/bomi-k.-lee/avatar_huafdb4f39aaaf2f0bb5d80aeec1be6d75_198311_270x270_fill_q90_lanczos_center.jpg</url>
+      <title>Bomi K. Lee</title>
+      <link>https://bomiklee.com/author/bomi-k.-lee/</link>
+    </image>
+    
+    <item>
+      <title>Climate Bones of Contention: How Climate Change Influences Territorial, Maritime, and River Interstate Conflicts</title>
+      <link>https://bomiklee.com/publication/climate_bones_of_contention/</link>
+      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/publication/climate_bones_of_contention/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Triangles, Major Powers, and Rivalry Duration</title>
+      <link>https://bomiklee.com/workingpapers/conference-paper/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://bomiklee.com/workingpapers/conference-paper/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

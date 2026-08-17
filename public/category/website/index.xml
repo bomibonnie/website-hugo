@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>website | Bomi K. Lee</title>
+    <link>http://bomibonnie.github.io/category/website/</link>
+      <atom:link href="http://bomibonnie.github.io/category/website/index.xml" rel="self" type="application/rss+xml" />
+    <description>website</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>website</title>
+      <link>http://bomibonnie.github.io/category/website/</link>
+    </image>
+    
+    <item>
+      <title>Making Network Animations Using NDTV package</title>
+      <link>http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/</guid>
+      <description>
+
+
+&lt;div id=&#34;examples&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
+&lt;div id=&#34;code&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Code&lt;/h3&gt;
+&lt;p&gt;Load packages&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(statnet)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: tergm&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: ergm&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: network&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## network: Classes for Relational Data
+## Version 1.16.0 created on 2019-11-30.
+## copyright (c) 2005, Carter T. Butts, University of California-Irvine
+##                     Mark S. Handcock, University of California -- Los Angeles
+##                     David R. Hunter, Penn State University
+##                     Martina Morris, University of Washington
+##                     Skye Bender-deMoll, University of Washington
+##  For citation information, type citation(&amp;quot;network&amp;quot;).
+##  Type help(&amp;quot;network-package&amp;quot;) to get started.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## ergm: version 3.10.4, created on 2019-06-10
+## Copyright (c) 2019, Mark S. Handcock, University of California -- Los Angeles
+##                     David R. Hunter, Penn State University
+##                     Carter T. Butts, University of California -- Irvine
+##                     Steven M. Goodreau, University of Washington
+##                     Pavel N. Krivitsky, University of Wollongong
+##                     Martina Morris, University of Washington
+##                     with contributions from
+##                     Li Wang
+##                     Kirk Li, University of Washington
+##                     Skye Bender-deMoll, University of Washington
+##                     Chad Klumb
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;ergm&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NOTE: Versions before 3.6.1 had a bug in the implementation of the bd()
+## constriant which distorted the sampled distribution somewhat. In
+## addition, Sampson&amp;#39;s Monks datasets had mislabeled vertices. See the
+## NEWS and the documentation for more details.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NOTE: Some common term arguments pertaining to vertex attribute and
+## level selection have changed in 3.10.0. See terms help for more
+## details. Use &amp;#39;options(ergm.term=list(version=&amp;quot;3.9.4&amp;quot;))&amp;#39; to use old
+## behavior.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: networkDynamic&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## networkDynamic: version 0.10.1, created on 2020-01-16
+## Copyright (c) 2020, Carter T. Butts, University of California -- Irvine
+##                     Ayn Leslie-Cook, University of Washington
+##                     Pavel N. Krivitsky, University of Wollongong
+##                     Skye Bender-deMoll, University of Washington
+##                     with contributions from
+##                     Zack Almquist, University of California -- Irvine
+##                     David R. Hunter, Penn State University
+##                     Li Wang
+##                     Kirk Li, University of Washington
+##                     Steven M. Goodreau, University of Washington
+##                     Jeffrey Horner
+##                     Martina Morris, University of Washington
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;networkDynamic&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## tergm: version 3.6.1, created on 2019-06-12
+## Copyright (c) 2019, Pavel N. Krivitsky, University of Wollongong
+##                     Mark S. Handcock, University of California -- Los Angeles
+##                     with contributions from
+##                     David R. Hunter, Penn State University
+##                     Steven M. Goodreau, University of Washington
+##                     Martina Morris, University of Washington
+##                     Nicole Bohme Carnegie, New York University
+##                     Carter T. Butts, University of California -- Irvine
+##                     Ayn Leslie-Cook, University of Washington
+##                     Skye Bender-deMoll
+##                     Li Wang
+##                     Kirk Li, University of Washington
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;tergm&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: ergm.count&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## ergm.count: version 3.4.0, created on 2019-05-15
+## Copyright (c) 2019, Pavel N. Krivitsky, University of Wollongong
+##                     with contributions from
+##                     Mark S. Handcock, University of California -- Los Angeles
+##                     David R. Hunter, Penn State University
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;ergm.count&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NOTE: The form of the term &amp;#39;CMP&amp;#39; has been changed in version 3.2 of
+## &amp;#39;ergm.count&amp;#39;. See the news or help(&amp;#39;CMP&amp;#39;) for more information.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: sna&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: statnet.common&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;statnet.common&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:base&amp;#39;:
+## 
+##     order&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## sna: Tools for Social Network Analysis
+## Version 2.5 created on 2019-12-09.
+## copyright (c) 2005, Carter T. Butts, University of California-Irvine
+##  For citation information, type citation(&amp;quot;sna&amp;quot;).
+##  Type help(package=&amp;quot;sna&amp;quot;) to get started.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: tsna&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## statnet: version 2019.6, created on 2019-06-13
+## Copyright (c) 2019, Mark S. Handcock, University of California -- Los Angeles
+##                     David R. Hunter, Penn State University
+##                     Carter T. Butts, University of California -- Irvine
+##                     Steven M. Goodreau, University of Washington
+##                     Pavel N. Krivitsky, University of Wollongong
+##                     Skye Bender-deMoll
+##                     Martina Morris, University of Washington
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;statnet&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## unable to reach CRAN&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ndtv)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: animation&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## ndtv: version 0.13.0, created on 2019-05-21
+## Copyright (c) 2019, Skye Bender-deMoll, University of Washington
+##                     with contributions from
+##                     Martina Morris, University of Washington
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;ndtv&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rio)
+library(knitr)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;riv &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&amp;quot;)
+vtx &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&amp;quot;)
+vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nv &amp;lt;- nrow(vtx)
+
+rivlist &amp;lt;- list()
+
+for(i in 1:4){
+  rivi &amp;lt;- subset(riv, riv$no == i)
+  rivii&amp;lt;-cbind(rivi$stateabb1, rivi$stateabb2)
+  netyr &amp;lt;- network.initialize(nv, directed=FALSE)
+  network.vertex.names(x=netyr) &amp;lt;- vtx$stateabb
+  netyr[rivii] &amp;lt;- 1
+  set.vertex.attribute(x=netyr,attrname=&amp;quot;order&amp;quot;,val=rep(i,nv))
+  rivlist[[i]] &amp;lt;- netyr
+}
+
+set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
+
+cols1&amp;lt;-vector()
+for(i in 1:204){
+  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
+         cols1[i] &amp;lt;- &amp;quot;red&amp;quot;, cols1[i]&amp;lt;-&amp;quot;blue&amp;quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(rivlist[[1]], vertex.col=cols1, edge.col=&amp;quot;grey50&amp;quot;,xpd=T)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://bomibonnie.github.io/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-gifs&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Make GIFs!&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Neither start or onsets specified, assuming start=0
+## Onsets and termini not specified, assuming each network in network.list should have a discrete spell of length 1
+## Argument base.net not specified, using first element of network.list instead
+## Created net.obs.period to describe network
+##  Network observation period info:
+##   Number of observation spells: 1 
+##   Maximal time range observed: 0 until 4 
+##   Temporal mode: discrete 
+##   Time unit: step 
+##   Suggested time increment: 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivgif &amp;lt;- compute.animation(rivdyn, 
+                            default.dist = 3,
+                            animation.mode = &amp;quot;MDSJ&amp;quot;,
+                            verbose = FALSE)
+render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file70501aff4f06.html&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file70501aff4f06.html in web browser&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;renders as&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file705017fa694d.html&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file705017fa694d.html in web browser&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
