@@ -7,7 +7,7 @@ authors:
 - Sara McLaughlin Mitchell  
  
 date: "2020-10-31T00:00:00Z"
-doi: ""
+doi: "10.1177/0022343320973738"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2020-10-31T00:00:00Z"

@@ -7,7 +7,7 @@ authors:
 - Cody J. Schmidt
 - Yufan Yang
 date: "2021-09-07T00:00:00Z"
-doi: ""
+doi: "10.1177/00223433211063333"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2021-09-07T00:00:00Z"
@@ -37,7 +37,6 @@ url_source: 'https://journals.sagepub.com/doi/10.1177/00223433211063333'
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
-image:
 image:
   caption: Photo by Kelly Sikkema on Unsplash
   focal_point: Smart

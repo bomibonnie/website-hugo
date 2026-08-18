@@ -112,7 +112,7 @@ One step further. Let's look at the strength of association using Kendall's Tau-
 
 #### Kendall's Tau-b
 
-If your variables of interest are oridnal, you can use Kendall's Tau-b for the strength of association, which bounded between -1 and 1. 
+If your variables of interest are ordinal, you can use Kendall's Tau-b for the strength of association, which bounded between -1 and 1. 
 
 ```{stata}
 tab educ faminc_new if faminc_new<17, taub

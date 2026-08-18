@@ -67,7 +67,7 @@ tab outcome, missing
 ```
 We can see that 5 (Stalemate) is the mode of this variable. 
 
-Let's fidn the mean and median of 'MaxDur' variable. 'MaxDur' is the maximum duration of dispute. First, you can use 'codebook' command. It will show you the range, number of unique values, number of missing values, mean, standard deviation, and percentiles. You can see that there is no missing values in this variable! 
+Let's find the mean and median of 'MaxDur' variable. 'MaxDur' is the maximum duration of dispute. First, you can use 'codebook' command. It will show you the range, number of unique values, number of missing values, mean, standard deviation, and percentiles. You can see that there is no missing values in this variable! 
 
 ```{stata}
 codebook maxdur

@@ -14,7 +14,7 @@ menu:
 weight: 3
 ---
 
-For this correlation and regression practice, I use a county-level voter turnout dataset. You can get this dataset by [request](mailto:bomi-lee-1@uiowa.edu).
+For this correlation and regression practice, I use a county-level voter turnout dataset. You can get this dataset by [request](mailto:bomi.may.lee@gmail.com).
 
 Load the dataset first.
 
@@ -46,7 +46,7 @@ Is there a linear relationship?
 
 ### Correlation 
 
-Let's look at the correlation between thses two variables.
+Let's look at the correlation between these two variables.
 
 ```{stata}
 pwcorr perc_turnout perc_mille
