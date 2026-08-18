@@ -1,6 +1,6 @@
 ---
 title: Triangles in Networks
-summary: 
+summary: How do triangular relationships among rivals and allies shape interstate conflict?
 tags:
 - Networks
 - Triangles
