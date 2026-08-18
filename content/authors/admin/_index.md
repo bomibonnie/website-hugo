@@ -10,18 +10,17 @@ authors:
 superuser: true
 
 # Role/position
-role: Visiting Assistant Professor
+role: ""
 
 # Organizations/Affiliations
-organizations:
-- name: Bucknell University
+organizations: []
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include international conflict, rivalry, and political methodology.
+bio: My research interests include international conflict, rivalries, and political methodology.
 
 interests:
 - International Conflict and Cooperation
-- Interstate Rivalry
+- International Rivalries
 - Network Analysis
 
 education:
@@ -53,13 +52,13 @@ social:
   link: https://github.com/bomibonnie
 - icon: envelope
   icon_pack: fas
-  link: "mailto:bomi.lee@bucknell.edu"
+  link: "mailto:bomi.may.lee@gmail.com"
   
 # Link to a PDF of your resume/CV from the About widget.
 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "bomi.lee@bucknell.edu" 
+email: "bomi.may.lee@gmail.com" 
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
@@ -67,4 +66,4 @@ user_groups:
 
 ---
 
-I am a Visiting Assistant Professor at Bucknell University. I was part of a National Science Foundation (NSF)-funded research program on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html). I received my BA in political science, MA in international relations from Seoul National University, and PhD in Political Science from the University of Iowa. My research focuses on international conflict. In my dissertation, *Interconnected Rivalries*, I examine the interdependence among interstate rivalries by focusing on triangular relationships and centrality in rivalry networks. I also have ongoing co-authored projects on climate change and interstate conflict. 
+I am a political scientist studying international conflict, interstate rivalries, and political methodology. I received my BA in political science and MA in international relations from Seoul National University, and my MA and PhD in political science from the University of Iowa. As a National Science Foundation (NSF)-funded postdoctoral scholar, I was part of a research program on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html) at the University of Kentucky and Washington University in St. Louis, and I most recently served as a Visiting Assistant Professor at the University of Arkansas and Bucknell University. In my dissertation, *Interconnected Rivalries*, I examine the interdependence among interstate rivalries by focusing on triangular relationships and centrality in rivalry networks. I also have ongoing co-authored projects on climate change and interstate conflict. 

@@ -19,7 +19,7 @@ publishDate: "2021-09-07T00:00:00Z"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Journal of Peace Research* 59(1)"
+publication: "*Journal of Peace Research* 59(1): 12-27"
 publication_short: "JPR"
 
 abstract: This project examines how disasters influence conflict dynamics in interstate rivalries. Drawing on the rivalry literature’s idea of political shocks and the logic of diversionary conflict, the authors argue that rapid onset disasters shorten the duration between dyadic militarized disputes. However, the conditions for diversionary conflict depend on the degree of intrastate turmoil and the number of interstate rivalries, with disaster diversion happening most frequently in rivalry dyads with significant internal strife. Given the increased frequency and severity of disasters globally, our findings suggest that these environmental shocks will increase interstate hostilities in conflict-prone regions. 

@@ -4,8 +4,8 @@ title: "Triangles, Major Powers, and Rivalry Duration"
 authors:
 - admin
 
-date: "2022-09-18T00:00:00Z"
-doi: ""
+date: "2023-01-01T00:00:00Z"
+doi: "10.1177/00220027221134781"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2022-09-18T00:00:00Z"
@@ -17,10 +17,10 @@ publishDate: "2022-09-18T00:00:00Z"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Journal of Conflict Resolution* (Forthcoming)"
+publication: "*Journal of Conflict Resolution* 67(6): 1128-1154"
 publication_short: "JCR"
 
-abstract: Why do some international rivalries last longer than others? Most rivalry literature focuses on the dyadic interactions within rivalries, but most rivalries have been connected to other rivalries. This paper examines a rivalry’s overlapping immediate strategic environment focusing on the countries directly connected via rivalries or alliances. Specifically, I consider how rivals are connected to third parties as common enemies, common friends, or mixed. I focus on three mechanisms to explain the third parties’ influence on the focal rivalry. First, a rivalry is more likely to end when it has common allies (information flow) or common enemies (prioritization). Second, a rivalry with mixed third parties is more likely to endure (stable blocs). Analyses of rivalry duration show that the duration of minor-minor rivalries is more likely to be influenced by common allies and mixed third parties, while that of major-minor rivalries is more likely to be affected by common enemies.
+abstract: Why do some international rivalries last longer than others? Rivalry literature focuses on the dyadic interactions within rivalries, but most rivalries have been connected to other rivalries. This paper examines a rivalry’s overlapping immediate strategic environment focusing on the countries directly connected via rivalries or alliances. Specifically, I consider how rivals are connected to third parties as common enemies, common friends, or mixed. I focus on three mechanisms to explain the third parties’ influence on the focal rivalry. First, a rivalry is more likely to end when it has common allies (information flow) or common enemies (prioritization). Second, a rivalry with mixed third parties is more likely to endure (stable blocs). Analyses of rivalry duration show that the duration of minor-minor rivalries is more likely to be influenced by common allies and mixed third parties, while that of major-minor rivalries is more likely to be affected by common enemies.
 
 # Summary. An optional shortened abstract.
 summary:
