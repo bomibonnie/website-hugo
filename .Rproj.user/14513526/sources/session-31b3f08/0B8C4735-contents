@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: "Quantitative Methods"
-summary: "This Fall 2025 course at Bucknell University is designed to (1) provide undergraduate students with foundational skills in political science research methods and statistical analysis, and (2) develop their ability to critically evaluate quantitative data presented in political journalism and policy debates.
+summary: "This Fall 2025 course at Bucknell University is designed to (1) provide undergraduate students with foundational skills in political science research methods and statistical analysis, and (2) develop their ability to critically evaluate quantitative data presented in political journalism and policy debates."
 
 # Page metadata.
 title: Course Outline
