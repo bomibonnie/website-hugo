@@ -31,4 +31,6 @@ url_video: ""
 slides: ""
 ---
 
-In this project, I examine whether and how various triangular relationships of rivalries and alliances affect 1) long-term interstate relationships and 2) short-term conflict propensities. Network analysis is employed to capture the various types of triangles. 
+In this project, I examine whether and how various triangular relationships of rivalries and alliances affect 1) long-term interstate relationships and 2) short-term conflict propensities. Network analysis is employed to capture the various types of triangles.
+
+This project's first paper, "Triangles, Major Powers, and Rivalry Duration," is now published in the *Journal of Conflict Resolution* (67(6): 1128-1154). An earlier draft of the paper was awarded the John Sprague Award (best paper on political networks by a graduate student) by the Political Networks Section of APSA in 2022. A companion paper, "Triangles, Mixed Alliance-Rivalry Dyads, and Conflict Propensity," is currently in progress.
