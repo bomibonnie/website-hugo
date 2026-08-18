@@ -18,6 +18,34 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
+  title = "Visiting Assistant Professor"
+  company = "Bucknell University"
+  company_url = ""
+  location = ""
+  date_start = "2025-07-01"
+  date_end = "2026-05-01"
+  description = """Taught:
+
+  * International Politics (Fall 2025, Spring 2026)
+  * Quantitative Methods (Fall 2025)
+
+  """
+
+[[experience]]
+  title = "Visiting Assistant Professor"
+  company = "University of Arkansas"
+  company_url = ""
+  location = ""
+  date_start = "2024-08-01"
+  date_end = "2025-05-01"
+  description = """Taught:
+
+  * Introduction to International Relations (Spring 2025)
+  * Introduction to Comparative Politics (Fall 2024, Spring 2025)
+
+  """
+
+[[experience]]
   title = "Statistical Consultant"
   company = "The Iowa Social Science Research Center, University of Iowa"
   company_url = "https://ppc.uiowa.edu/isrc/workshops"
