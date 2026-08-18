@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: "Quantitative Methods"
-summary: "This Fall 2025 course at Bucknell University is designed to (1) provide undergraduate students with foundational skills in political science research methods and statistical analysis, and (2) develop their ability to critically evaluate quantitative data presented in political journalism and policy debates."
+summary: "This Fall 2025 course at Bucknell University is designed to (1) provide undergraduate students with foundational skills in political science research methods and statistical analysis, and (2) develop their ability to critically evaluate quantitative data presented in political journalism and policy debates. You can find my course outline and R tutorials for this course by clicking the course title above."
 
 # Page metadata.
 title: Course Outline
@@ -25,7 +25,9 @@ menu:
 * Hypotheses, Theory, & Importance of Measurement
 * Levels of Measurement
 * Visualizing Data
+* **R: Visualization**
 * Measures of Central Tendency & Dispersion
+* **R: Describing Variables**
 * The Normal Distribution
 
 
@@ -34,6 +36,7 @@ menu:
 * Understanding the Probability in Statistics
 * Sampling & Sampling Bias
 * Sampling Distributions & The Central Limit Theorem
+* **R: Central Limit Theorem**
 * Estimator’s Bias & Efficiency
 * Hypothesis Testing with Confidence Intervals & p-values
 
