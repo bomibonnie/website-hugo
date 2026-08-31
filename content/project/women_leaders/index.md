@@ -21,6 +21,6 @@ image:
   focal_point: 'Smart'
 ---
 
-As a National Science Foundation (NSF)-funded postdoctoral scholar at the University of Kentucky and Washington University in St. Louis, I worked with [Tiffany D. Barnes](https://tiffanydbarnes.weebly.com/research.html) and Diana Z. O'Brien on their NSF-funded research program on Women as Leaders, Policy-Makers, and Symbols.
+As a National Science Foundation (NSF)-funded postdoctoral scholar at the University of Kentucky and Washington University in St. Louis, I worked with Tiffany D. Barnes and Diana Z. O'Brien on their NSF-funded research program on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html).
 
 Our paper "Shattered Pathways: Women's Appointment to Interior Ministries in the Wake of Terrorism" uses a new global dataset of interior ministry appointments across 193 countries (1988-2018) to examine how terrorist attacks shape women's access to the top domestic security position. The paper is forthcoming in *The Journal of Politics*. Related work, "Even After Albright, Foreign Policy Leaders Are Still Mostly Men," appeared in *The Washington Post*'s Monkey Cage in 2022.
