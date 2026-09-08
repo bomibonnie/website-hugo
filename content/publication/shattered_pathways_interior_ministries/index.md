@@ -7,7 +7,7 @@ authors:
 - Diana Z. O'Brien
 
 date: "2026-08-01T00:00:00Z"
-doi: ""
+doi: "10.1086/742110"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2026-08-01T00:00:00Z"
