@@ -1,5 +1,5 @@
 ---
-title: "Shattered Pathways: Women's Appointment to Interior Ministries in the Wake of Terrorism"
+title: "Shattered Pathways: Women's Access to Interior Ministries in the Wake of Terrorism"
 
 authors:
 - Tiffany D. Barnes
