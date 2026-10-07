@@ -132,3 +132,25 @@ $iowa-gold-bright: rgb(255, 224, 102); // hover — 10.9:1
   color: rgb(40, 42, 54);
   background-color: $iowa-gold;
 }
+
+// ---------------------------------------------------------------------------
+// Author emphasis
+//
+// In publication lists, co-authors render as plain <span> and only an author
+// with a profile in content/authors/ is wrapped in a link — today that is
+// Bomi Lee alone. Styling linked authors therefore picks out her name in
+// every author list without hardcoding a slug.
+//
+// `_content.scss` pins `.article-metadata a` to 54% opacity, the same as the
+// surrounding co-author text, so weight alone would carry the distinction.
+// Lifting her name to full strength separates it by colour as well.
+// ---------------------------------------------------------------------------
+.article-metadata a[href*="/author/"] {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.dark .article-metadata a[href*="/author/"] {
+  font-weight: 700;
+  color: #fff;
+}
