@@ -7,11 +7,16 @@ light = true
 # Primary
 primary = "rgb(0, 0, 0)"
 
+# Links (gold is unreadable on white at 1.5:1, so body links use a
+# darkened Old Gold that passes WCAG AA at 4.8:1).
+link = "rgb(139, 111, 0)"
+link_hover = "rgb(92, 74, 0)"
+
 # Menu
-menu_primary = "rgb(255, 199, 44)"
-menu_text = "rgb(0, 0, 0)"
-menu_text_active = "rgb(0, 0, 0)"
-menu_title = "rgb(0, 0, 0)"
+menu_primary = "rgb(0, 0, 0)"
+menu_text = "rgb(255, 255, 255)"
+menu_text_active = "rgb(255, 205, 0)"
+menu_title = "rgb(255, 205, 0)"
 
 # Home sections
 home_section_odd = "rgb(255, 255, 255)"

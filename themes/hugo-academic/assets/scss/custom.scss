@@ -1,1 +1,88 @@
 // Override this file to add your own SCSS styling.
+
+// ---------------------------------------------------------------------------
+// Dark-mode fixes for the `iowa` theme.
+//
+// The theme derives most of its dark-mode accents from `$sta-primary`, which
+// the Iowa palette pins to black — unreadable on a dark ground. Old Gold has
+// the inverse problem to the one it has on white (1.5:1 there, 9.5:1 here),
+// so dark mode uses gold wherever light mode uses the darkened bronze.
+//
+// Scoped with `:not(.btn)` so button labels keep their own colour, and kept
+// below the navbar's own rules, which win on specificity.
+// ---------------------------------------------------------------------------
+
+$iowa-gold: rgb(255, 205, 0); // Old Gold  — 9.5:1 on the dark ground
+$iowa-gold-bright: rgb(255, 224, 102); // hover — 10.9:1
+
+// Body links. `_root.scss` colours these from `$sta-link`; `_dark.scss`
+// never overrides it, so they would stay bronze at 3.0:1.
+.dark a:not(.btn) {
+  color: $iowa-gold;
+}
+
+.dark a:not(.btn):hover,
+.dark a:not(.btn):focus {
+  color: $iowa-gold-bright;
+}
+
+// Listing titles are already white in dark mode; keep the theme's choice
+// rather than letting the rule above recolour them.
+.dark .article-title a,
+.dark h3.article-title a:hover {
+  color: #fff;
+}
+
+// Card titles — project and publication titles on the home page.
+// `_dark.scss` hardcodes these to `$sta-primary`: black on a #343a40 card.
+.dark .card h4 a {
+  color: $iowa-gold;
+}
+
+// Article metadata hover (authors, dates).
+.dark .article-metadata a:hover {
+  color: $iowa-gold;
+}
+
+// Tag cloud hover — `$sta-primary-light` is lighten(black, 10%) = #1a1a1a.
+.dark .tag-cloud a:active,
+.dark .tag-cloud a:focus,
+.dark .tag-cloud a:hover {
+  color: $iowa-gold;
+}
+
+// Featurette icons (accomplishments widget).
+.dark .featurette-icon {
+  color: $iowa-gold;
+}
+
+// Experience widget — borders and fill are drawn in `$sta-primary`.
+.dark .experience .m-2 .border,
+.dark .experience .col.border-right {
+  border-color: $iowa-gold !important;
+}
+
+.dark .experience .m-2 .border.exp-fill {
+  background-color: $iowa-gold !important;
+}
+
+// Courses use `layout: docs`, so the docs sidebar, TOC and anchor links
+// apply there and are all drawn in `$sta-primary`.
+.dark .docs-sidebar .docs-toc-item.active a,
+.dark .docs-sidebar .nav > .active > a,
+.dark .docs-sidebar .nav > .active:hover > a,
+.dark .docs-toggle,
+.dark #TableOfContents li a:hover,
+.dark #TableOfContents li a.active,
+.dark .toc-top li a:hover,
+.dark .anchorjs-link,
+.dark .anchorjs-link:hover {
+  color: $iowa-gold;
+}
+
+// Input focus ring — `_dark.scss` draws it in `$sta-primary`, i.e. invisible.
+.dark input:focus,
+.dark .form-control:focus {
+  border-color: $iowa-gold;
+  box-shadow: 0 0 0 0.2rem rgba(255, 205, 0, 0.25);
+}
