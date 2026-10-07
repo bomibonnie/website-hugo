@@ -4,3 +4,6 @@
 .Ruserdata
 .DS_Store
 **/.DS_Store
+
+# Hugo build output (the deploy builds from source)
+public/
