@@ -86,3 +86,49 @@ $iowa-gold-bright: rgb(255, 224, 102); // hover — 10.9:1
   border-color: $iowa-gold;
   box-shadow: 0 0 0 0.2rem rgba(255, 205, 0, 0.25);
 }
+
+// Outline buttons — the PDF / DOI / Cite / Project links on publication
+// pages. Bootstrap derives these from `$primary`, which `bootstrap_variables`
+// sets from `$sta-primary`: Iowa black, 1.5:1 on the dark ground.
+.dark .btn-outline-primary {
+  color: $iowa-gold;
+  border-color: $iowa-gold;
+}
+
+.dark .btn-outline-primary:hover,
+.dark .btn-outline-primary:focus,
+.dark .btn-outline-primary:active,
+.dark .btn-outline-primary.active,
+.dark .btn-outline-primary:not(:disabled):not(.disabled):active {
+  color: rgb(40, 42, 54);
+  background-color: $iowa-gold;
+  border-color: $iowa-gold;
+}
+
+.dark .btn-outline-primary:focus,
+.dark .btn-outline-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 205, 0, 0.3);
+}
+
+// Filled primary buttons — the Research section's filter toolbar.
+// `_dark.scss` sets `color: initial` on these, which resolves to black on a
+// black ($sta-primary) button: a 1:1 contrast ratio. The rule assumes a
+// palette whose primary is light, which Iowa's is not.
+.dark .btn-primary,
+.dark .btn.btn-primary.active,
+.dark .btn-toolbar .btn.btn-primary.active {
+  color: #fff;
+}
+
+// Tag badges on publication and project pages. In dark mode the theme gives
+// them a translucent white ground, against which any link colour — the
+// theme's bronze included — lands around 1.5:1.
+.dark a.badge-light {
+  color: #fff;
+}
+
+.dark a.badge-light:hover,
+.dark a.badge-light:focus {
+  color: rgb(40, 42, 54);
+  background-color: $iowa-gold;
+}
