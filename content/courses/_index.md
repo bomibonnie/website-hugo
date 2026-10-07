@@ -1,5 +1,5 @@
 ---
-title: Courses
+title: Teaching
 layout: docs  # Do not modify.
 
 # Optional header image (relative to `static/img/` folder).
@@ -23,22 +23,6 @@ header:
 **University of Iowa**
 
 - [Analyzing Political Data](analyzing-political-data/) — Spring 2020
-
-## Teaching Assistant
-
-**University of Iowa**
-
-- Consequences of War (online) — Spring 2021
-- Introduction to International Relations — Fall 2016, Fall 2017, Spring 2018; Summer 2018 (online)
-- Introduction to American Politics — Spring 2017
-
-**ICPSR Summer Program, University of Michigan**
-
-- Time Series Analysis — Summer 2019
-
-**Seoul National University**
-
-- Introduction to International Relations — Fall 2011
 
 ## Workshops and Guest Lectures
 
