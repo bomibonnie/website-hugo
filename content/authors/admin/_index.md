@@ -1,6 +1,7 @@
 ---
 # Display name
-title: Bomi Lee
+title: Bomi K. Lee
+slug: bomi-lee
 
 # Username (this should match the folder name)
 authors:
