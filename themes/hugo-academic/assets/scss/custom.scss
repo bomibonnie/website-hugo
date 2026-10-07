@@ -225,3 +225,13 @@ $iowa-gold-bright: rgb(255, 224, 102); // hover — 10.9:1
     padding-top: 40px;
   }
 }
+
+// Research tiles: drop the banner photo. Only two of the four projects have
+// a featured image, so the cards read unevenly with them. The files stay in
+// place and still serve as the header image on each project's own page
+// (page_header.html), which is why this hides the card banner rather than
+// deleting the images. The anchor wrapping it is hidden too, so no empty
+// line box is left behind.
+#projects .card-image {
+  display: none;
+}
