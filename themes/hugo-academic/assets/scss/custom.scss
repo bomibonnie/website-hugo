@@ -164,3 +164,64 @@ $iowa-gold-bright: rgb(255, 224, 102); // hover — 10.9:1
   flex: 0 0 100%;
   max-width: 100%;
 }
+
+// The site runs at font_size = "L", which renders body copy at 21px. That is
+// generous for the about widget's bio, whose height pushes the publications
+// section below the fold. The bio is $person_page.Content with no class of
+// its own, so scope to direct paragraph children of its column.
+#about .col-lg-8 > p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+// ---------------------------------------------------------------------------
+// Home section proportions
+//
+// Every home section splits its row 4/8: a 400px left column holding the
+// portrait (about) or the section heading (everything else), against 800px of
+// content. Narrowing that to 3/9 gives the bio and the publication entries
+// more room. lg and up only — below that the columns stack and the split is
+// irrelevant.
+// ---------------------------------------------------------------------------
+@media (min-width: 992px) {
+  .home-section > .container > .row > .col-lg-4 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .home-section > .container > .row > .col-lg-8 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  // The avatar is a fixed 270px square, which would exactly fill the narrowed
+  // column's content box. Trimming it gives the photo breathing room and
+  // shortens the about block again.
+  .home-section .avatar {
+    width: 200px;
+    height: 200px;
+  }
+
+  // Section headings are 47.25px, at which "Publications" needs 295px against
+  // the narrowed column's 270px content box. The theme sets
+  // `word-break: break-word`, so it split mid-word as "Publicatio/ns".
+  // Scale the headings so the longest one clears with room to spare.
+  .home-section .section-heading h1 {
+    font-size: 40px;
+  }
+}
+
+// The theme pads every home section 110px top and bottom (_widgets.scss),
+// so 220px of empty space sat between the end of the bio and the publications
+// heading. Halve it at desktop widths; the theme's own narrower mobile
+// padding is left alone.
+@media (min-width: 992px) {
+  .home-section {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .home-section:first-of-type {
+    padding-top: 40px;
+  }
+}

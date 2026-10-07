@@ -18,21 +18,6 @@ organizations: []
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include international conflict, rivalries, and political methodology.
 
-education:
-  courses:
-  - course: PhD in Political Science
-    institution: University of Iowa
-    year: 2021
-  - course: MA in Political Science
-    institution: University of Iowa
-    year: 2019
-  - course: MA in International Relations
-    institution: Seoul National University
-    year: 2013
-  - course: BA in Political Science
-    institution: Seoul National University
-    year: 2011
-
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
@@ -61,4 +46,4 @@ user_groups:
 
 ---
 
-I am a political scientist studying international conflict, interstate rivalries, and political methodology. My dissertation, *Interconnected Rivalries*, examines how rivalries shape one another through triangular relationships and centrality in rivalry networks. I also study how climate variability and disasters raise the risk of interstate conflict, and — as an NSF-funded postdoctoral scholar on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html) — how political violence shapes women's access to power. My research has appeared or is forthcoming in *Journal of Peace Research*, *Journal of Conflict Resolution*, *Environment and Security*, *Foreign Policy Analysis*, *Proceedings of the National Academy of Sciences*, and *The Journal of Politics*.
+I am a political scientist studying international conflict, interstate rivalries, and political methodology. My dissertation, *Interconnected Rivalries*, examines how rivalries shape one another through triangular relationships and centrality in rivalry networks. I also study how climate variability and disasters raise the risk of interstate conflict, and — as an NSF-funded postdoctoral scholar on [Women as Leaders, Policy-Makers, and Symbols](https://tiffanydbarnes.weebly.com/research.html) — how political violence shapes women's access to power. My research has appeared or is forthcoming in *Journal of Peace Research*, *Journal of Conflict Resolution*, *Environment and Security*, *Foreign Policy Analysis*, *Proceedings of the National Academy of Sciences*, and *The Journal of Politics*. I received my PhD in political science from the University of Iowa and my BA and MA from Seoul National University.
