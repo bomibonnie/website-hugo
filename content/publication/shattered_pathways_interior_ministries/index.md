@@ -20,7 +20,6 @@ publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
 publication: "*The Journal of Politics* (Forthcoming)"
-publication_short: "JOP"
 
 abstract: "The interior ministry—responsible for terrorism, domestic conflict, and emergency management—remains one of the most male-dominated government portfolios worldwide. What explains women's continued exclusion? Using a new global dataset of interior ministry appointments across 193 countries (1988–2018), we examine the relationship between women's appointments and terrorist attacks. Our analysis of 2,604 ministers shows that while terrorism often prompts turnover, women are significantly less likely to be appointed after heightened terrorist activity. We argue that this exclusion stems from a preference for male leadership following terror events and show that this pattern does not extend to a less masculinized crisis: natural disasters. Finally, a survey experiment confirms that U.S. citizens are less likely to prefer a woman interior minister after a terrorist attack but show no similar gender bias following a natural disaster. These findings reveal how gendered expectations of leadership shape political appointments during crises."
 

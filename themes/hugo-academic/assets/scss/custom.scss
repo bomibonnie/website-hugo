@@ -154,3 +154,13 @@ $iowa-gold-bright: rgb(255, 224, 102); // hover — 10.9:1
   font-weight: 700;
   color: #fff;
 }
+
+// The about widget hardcodes col-md-5 for Interests and col-md-7 for
+// Education (layouts/partials/widgets/about.html) with no adjustment when
+// one is absent. With Interests removed, Education sat alone at 7/12 width
+// with dead space beside it. Widen it only when it is the row's sole column,
+// so restoring Interests silently reverts to the two-column layout.
+#about .row > [class*="col-md-"]:only-child {
+  flex: 0 0 100%;
+  max-width: 100%;
+}

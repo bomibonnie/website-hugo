@@ -18,11 +18,6 @@ organizations: []
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include international conflict, rivalries, and political methodology.
 
-interests:
-- International Conflict and Cooperation
-- International Rivalries
-- Network Analysis
-
 education:
   courses:
   - course: PhD in Political Science
