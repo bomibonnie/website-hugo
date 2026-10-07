@@ -24,8 +24,18 @@ header:
 
 - [Analyzing Political Data](analyzing-political-data/) — Spring 2020
 
-## Workshops and Guest Lectures
+## Workshops
 
-- Introduction to Network Analysis in R — Political Networks (PolNet), 2022, 2023, 2024
-- Advanced Methodology (graduate) — University of Iowa, Fall 2021, guest lecture on network centrality in R
-- R workshops on data management, network visualization, and network analysis — Iowa Social Science Research Center, Fall 2019 – Spring 2021
+**Political Networks (PolNet), APSA**
+
+- Introduction to Network Analysis in R — 2022, 2023, 2024 ([2022 materials](https://github.com/bomibonnie/PolNetIntroNetworkAnalysis2022))
+
+**[Iowa Social Science Research Center](https://ppc.uiowa.edu/isrc/workshops), University of Iowa**
+
+- [Data Management using R](https://github.com/bomibonnie/R-Workshops-2020) — October 2020
+- [Network Visualization using R](https://github.com/bomibonnie/Network-Analysis-Workshops-2020/tree/main/Network%20Visualization%20using%20R) — November 2020
+- [Network Analysis using R](https://github.com/bomibonnie/Network-Analysis-Workshops-2020/tree/main/Network%20Analysis%20using%20R) — December 2020
+
+## Guest Lectures
+
+- Advanced Methodology (graduate) — University of Iowa, Fall 2021: network centrality and its calculation in R
